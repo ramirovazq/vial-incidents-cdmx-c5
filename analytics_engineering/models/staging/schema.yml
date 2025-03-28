@@ -1,0 +1,10 @@
+sources:
+  - name: raw
+    database: utility-cathode-448702-g7
+    schema: vial_incidents 
+
+    tables:
+      - name: external_inviales_2014_2015_brz
+      - name: external_inviales_2016_2018_brz
+      - name: external_inviales_2019_2021_brz
+      - name: external_inviales_2022_2024_brz
