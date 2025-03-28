@@ -2,6 +2,7 @@ notas.txt
 infraestructure/keys/*.json
 # Local .terraform directories
 **/.terraform/*
+infraestructure/.terraform/*
 
 
 # Byte-compiled / optimized / DLL files
