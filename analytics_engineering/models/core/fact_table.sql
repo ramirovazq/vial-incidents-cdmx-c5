@@ -1,11 +1,23 @@
-{{
-    config(
-        materialized='table'
-    )
+{{ config(
+    materialized='table',
+    partition_by={
+        "field": "year_creation_date",
+        "data_type": "INT64",
+        "range": {
+            "start": 2014,
+            "end": 2024,
+            "interval": 1
+        }
+    },
+    cluster_by=["month_creation_date", "hour_creation_date"]) 
 }}
+
 
     SELECT
     id,
+    year_creation_date,
+    month_creation_date,
+    hour_creation_date,
     creation_date,
     creation_hour,
     latitude,

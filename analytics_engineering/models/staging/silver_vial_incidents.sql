@@ -24,6 +24,10 @@ tables_unioned as (
     SELECT * FROM data_2022_2024
 )
 
-SELECT *
+SELECT 
+    *,
+    EXTRACT(YEAR FROM creation_date) AS year_creation_date,
+    EXTRACT(MONTH FROM creation_date) AS month_creation_date,
+    EXTRACT(HOUR FROM TIME(creation_hour)) AS hour_creation_date
 FROM tables_unioned
 WHERE town_hall_start NOT IN ('Alcaldia_Inicio','Na')
