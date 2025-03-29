@@ -9,7 +9,7 @@
             "interval": 1
         }
     },
-    cluster_by=["month_creation_date", "hour_creation_date"]) 
+    cluster_by=["month_creation_date", "hour_creation_date","index_incident"]) 
 }}
 
 
