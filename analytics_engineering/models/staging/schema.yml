@@ -4,10 +4,10 @@ sources:
     schema: vial_incidents 
 
     tables:
-      - name: external_inviales_2014_2015_brz
-      - name: external_inviales_2016_2018_brz
-      - name: external_inviales_2019_2021_brz
-      - name: external_inviales_2022_2024_brz
+      - name: external_vial_incidents_2014_2015_brz
+      - name: external_vial_incidents_2016_2018_brz
+      - name: external_vial_incidents_2019_2021_brz
+      - name: external_vial_incidents_2022_2024_brz
         columns:
           - name: folio
             description: Alphanumeric number for each incident
