@@ -11,6 +11,6 @@ WITH different_townhall AS (
 )
 
 SELECT 
-    row_number() OVER () as town_hall_start,
+    row_number() OVER () as index_town_hall,
     town_hall_start as town_hall
 FROM different_townhall
