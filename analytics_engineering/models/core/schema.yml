@@ -1,0 +1,88 @@
+version: 2
+
+models:
+  - name: fact_table
+    description: ""
+    columns:
+      - name: id
+        data_type: string
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+          - unique:
+              severity: warn
+
+
+      - name: creation_date
+        data_type: date
+        description: ""
+
+      - name: creation_hour
+        data_type: time
+        description: ""
+
+      - name: latitude
+        data_type: float64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: longitud
+        data_type: float64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+
+      - name: index_week_day
+        data_type: string
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+
+      - name: index_suburb
+        data_type: int64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: index_type_incident
+        data_type: int64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: index_town_hall
+        data_type: int64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: index_reception_medium
+        data_type: int64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: index_incident_classification
+        data_type: int64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn
+
+      - name: index_incident
+        data_type: int64
+        description: ""
+        tests:
+          - not_null:
+              severity: warn

@@ -17,7 +17,7 @@ WITH raw_source AS (
         TRIM(hora_cierre)                 as hora_cierre,
         TRIM(latitud)                     as latitud,
         TRIM(longitud)                    as longitud
-    from {{ source('raw', 'external_inviales_2016_2018_brz') }}
+    from {{ source('raw', 'external_vial_incidents_2016_2018_brz') }}
 ),
 
 brz_source as (
