@@ -2,6 +2,10 @@
 SERVICE=dbt-bq-dtc
 
 # Probar conexión y configuración de DBT
+version:
+	docker compose run --rm $(SERVICE) --version
+
+# Probar conexión y configuración de DBT
 debug:
 	docker compose run --rm $(SERVICE) debug
 
