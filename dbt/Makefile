@@ -17,6 +17,9 @@ deps:
 build:
 	docker compose run --rm $(SERVICE) build
 
+prod:
+	docker compose run --rm $(SERVICE) build --vars '{'is_test_run': 'false'}'
+
 # Entrar a una shell interactiva dentro del contenedor
 shell:
 	docker compose run --rm $(SERVICE) bash
