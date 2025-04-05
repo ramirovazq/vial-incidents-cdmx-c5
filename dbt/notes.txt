@@ -1,0 +1,2 @@
+necessary next profile line
+~/.dbt/profiles.yml
