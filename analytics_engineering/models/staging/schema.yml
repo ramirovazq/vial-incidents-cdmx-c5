@@ -1,0 +1,65 @@
+sources:
+  - name: raw
+    database: utility-cathode-448702-g7
+    schema: vial_incidents 
+
+    tables:
+      - name: external_vial_incidents_2014_2015_brz
+        columns:
+          - name: folio
+            description: Alphanumeric number for each incident
+            tests:
+              - unique:
+                  severity: warn
+              - not_null:
+                  severity: warn
+          - name: fecha_creacion
+            description: date of incident 
+            tests:
+              - not_null:
+                  severity: warn
+
+      - name: external_vial_incidents_2016_2018_brz
+        columns:
+          - name: folio
+            description: Alphanumeric number for each incident
+            tests:
+              - unique:
+                  severity: warn
+              - not_null:
+                  severity: warn
+          - name: fecha_creacion
+            description: date of incident 
+            tests:
+              - not_null:
+                  severity: warn
+
+      - name: external_vial_incidents_2019_2021_brz
+        columns:
+          - name: folio
+            description: Alphanumeric number for each incident
+            tests:
+              - unique:
+                  severity: warn
+              - not_null:
+                  severity: warn
+          - name: fecha_creacion
+            description: date of incident 
+            tests:
+              - not_null:
+                  severity: warn
+
+      - name: external_vial_incidents_2022_2024_brz
+        columns:
+          - name: folio
+            description: Alphanumeric number for each incident
+            tests:
+              - unique:
+                  severity: warn
+              - not_null:
+                  severity: warn
+          - name: fecha_creacion
+            description: date of incident 
+            tests:
+              - not_null:
+                  severity: warn
