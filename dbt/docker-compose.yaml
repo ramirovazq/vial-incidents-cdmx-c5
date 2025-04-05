@@ -6,7 +6,9 @@ services:
       target: dbt-bigquery
     image: dbt/bigquery
     volumes:
-      - .:/usr/app
+      - ../analytics_engineering/:/usr/app
       - ~/.dbt/:/root/.dbt/
-      - ~/.google/credentials/google_credentials.json:/.google/credentials/google_credentials.json
+      - /Users/ramisu/.google/credentials/google_credentials.json:/secrets/google_credentials.json:ro
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /secrets/google_credentials.json
     network_mode: host
