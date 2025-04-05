@@ -29,7 +29,7 @@ brz_source as (
 
     select
 
-        {{ dbt_utils.generate_surrogate_key(['folio', 'fecha_creacion']) }} as id,
+        {{ dbt_utils.surrogate_key(['folio', 'fecha_creacion']) }} as id,
 
         SAFE_CAST(fecha_creacion AS DATE)  AS creation_date,
         SAFE_CAST(hora_creacion AS TIME)   AS creation_hour,
