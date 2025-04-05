@@ -1,0 +1,81 @@
+id: 03_upload_and_create_external
+namespace: vial_incidents_project
+
+inputs:
+
+  - id: year_range
+    type: SELECT
+    displayName: Select year range
+    values: ["2014_2015", "2016_2018", "2019_2021", "2022_2024"]
+    defaults: "2014_2015"
+    allowCustomValue: true # allows you to type 2021 from the UI 
+
+variables:
+  file: "inViales_{{inputs.year_range}}.csv"
+  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/{{vars.file}}"
+  table: "{{kv('GCP_DATASET')}}.external_vial_incidents_{{inputs.year_range}}_brz"
+  data: "{{outputs.extract.outputFiles['inViales_' ~ inputs.year_range ~ '.csv']}}"
+
+tasks:
+  - id: set_label
+    type: io.kestra.plugin.core.execution.Labels
+    labels:
+      file: "{{render(vars.file)}}"
+      range: "{{inputs.year_range}}"
+
+  - id: extract
+    type: io.kestra.plugin.scripts.shell.Commands
+    outputFiles:
+      - "*.csv"
+    taskRunner:
+      type: io.kestra.plugin.core.runner.Process
+    commands:
+      - wget -qO- https://archivo.datos.cdmx.gob.mx/C5/incidentes_viales/{{render(vars.file)}} > {{render(vars.file)}}
+
+  - id: upload_to_gcs
+    type: io.kestra.plugin.gcp.gcs.Upload
+    from: "{{render(vars.data)}}"
+    to: "{{render(vars.gcs_file)}}"
+
+  - id: bq_external_table
+    type: io.kestra.plugin.gcp.bigquery.Query
+    sql: |
+          CREATE OR REPLACE EXTERNAL TABLE `{{kv('GCP_PROJECT_ID')}}.{{render(vars.table)}}`
+          (
+            folio STRING,
+            fecha_creacion STRING,
+            hora_creacion STRING,
+            dia_semana STRING,
+            fecha_cierre STRING,
+            hora_cierre STRING,
+            tipo_incidente_c4 STRING,
+            incidente_c4 STRING,
+            alcaldia_inicio STRING,
+            codigo_cierre STRING,
+            clas_con_f_alarma STRING,
+            tipo_entrada STRING,
+            alcaldia_cierre STRING,
+            alcaldia_catalogo STRING,
+            colonia_catalogo STRING,
+            longitud STRING,
+            latitud STRING
+          )
+          OPTIONS (
+              format = 'CSV',
+              uris = ['{{render(vars.gcs_file)}}'],
+              skip_leading_rows = 1,
+              ignore_unknown_values = TRUE
+          );
+
+  - id: purge_files
+    type: io.kestra.plugin.core.storage.PurgeCurrentExecutionFiles
+    description: If youd like to explore Kestra outputs, disable it.
+    disabled: false
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{kv('GCP_CREDS')}}"
+      projectId: "{{kv('GCP_PROJECT_ID')}}"
+      location: "{{kv('GCP_LOCATION')}}"
+      bucket: "{{kv('GCP_BUCKET_NAME')}}"
