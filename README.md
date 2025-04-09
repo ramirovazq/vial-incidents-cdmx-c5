@@ -104,15 +104,17 @@ Develop a <code>Data Architecture</code> that could ingest historical data from 
 For setting this project it's necessary to count with:
 
 - Docker and Docker-Compose
-- Kestra (as orchestrator)
 - A GCP account
 - DBT (we could use DBT Cloud account or local DBT with Docker)
+- Kestra (as orchestrator) but will run in Docker
+- Metabase (as visualizator) but will run in Docker
 
-### 3.1. Alternative A - Cloud
+### 3.1. Cloud Alternative
+
 
 - <p align="justify">
-<b>Kestra</b>:  is an open-source platform that helps in automate workflows and orchestrate jobs.
-</p>
+  <b>Kestra</b>:  is an open-source platform that helps in automate workflows and orchestrate jobs.
+  </p>
 
 - <b>Google Cloud Platform</b>:
 
