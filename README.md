@@ -151,6 +151,9 @@ This first section focuses on how to set up both GCP and DBT cloud account.
 ## 6.1 Setting up Google Cloud Platform account
 
 Follow these steps to create your GCP account and access cloud services with free credits.
+Objective of these steps:
+- Create a GCP account
+- Generate a service account, and a json key file.
 
 ### 6.1.1 Visit the Google Cloud official website
 Go to: [https://cloud.google.com/](https://cloud.google.com/)
@@ -243,6 +246,72 @@ Add new key as json
 <p align="center">
   <img src="images\download_recently_created_key_json.png">
 </p>
+
+## 6.2 Setting up DBT cloud account
+
+Follow these steps to create your DBT cloud account. 
+
+### 6.2.1 Go to the DBT Cloud website
+Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
+
+### 6.2.1 How to Create a DBT Cloud Account
+
+Follow the steps below to create a free DBT Cloud account and start building data transformation workflows.
+
+### 6.2.2  Go to the DBT Cloud website
+
+Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
+
+Or go directly to the signup page:  
+👉 [https://cloud.getdbt.com/signup/](https://cloud.getdbt.com/signup/)
+
+### 6.2.3 Choose your signup method
+
+You can sign up using:
+- **Email and password**, or
+- A **GitHub** or **Google** account (recommended for easy integration)
+
+### 6.2.4 Complete your account setup
+
+- Enter your name and company information (if asked)
+- Choose a **free plan** (Starter Plan)
+- Set your **workspace name**
+
+### 6.2.5 Connect a data warehouse
+
+After creating your account, DBT Cloud will prompt you to connect to a data warehouse 
+
+<p align="center">
+  <img src="images\dbt_do_a_connection.png">
+</p>
+
+<p align="center">
+  <img src="images\dbt_select_bigquery_connection.png">
+</p>
+
+Select Connection with BigQuery and put in dataset: vial_incidents
+
+<p align="center">
+  <img src="images\dbt_configure_connection.png">
+</p>
+
+
+You’ll need credentials or a service account from your cloud provider (e.g., GCP for BigQuery).
+
+### 6.2.6 Connect a Git repository
+
+DBT Cloud uses Git to version control your DBT project.
+You can:
+- Connect to GitHub, GitLab, or Bitbucket
+- Or skip this for now and set it up later
+
+### 6.2.6 Start building your project 🚀
+Once connected, you can:
+- Create DBT models
+- Run jobs
+- Monitor executions
+- Use the web IDE
+
 
 ## 8. References
 
