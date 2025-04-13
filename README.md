@@ -105,20 +105,20 @@ For setting this project it's necessary to count with:
 
 ### 4.0 Data Architecture
 
-<p align="justify">
+
 The architecture and data flow (including orchestrator actions) are shown in the image below (images/architecture.png).
 It is divided into four blocks, each representing a different layer, making it easier to identify the components and tools involved at each stage.
 This flow is designed for ***batch processing***, as data updates in the files occur yearly.
 It's important to note that this architecture follows an ***ELT*** approach, since the raw data is stored first and then processed and transformed in later steps.
-</p>
+
 
 <p align="center">
   <img src="images\architecture.png">
 </p>
 
-<p align="justify">
+
 One of the main objectives of this project is to keep all elements as clear as possible, so please refer to the following high-level overview diagram (images/architecture_high_level_overview_.png).
-</p>
+
 
 <p align="center">
   <img src="images\architecture_high_level_overview_diagram.png">
