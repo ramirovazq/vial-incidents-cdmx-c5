@@ -58,7 +58,7 @@ $ make prod
   - [6.1.8. Create service account](#618-create-service-account)
 - 6.2. [Setting up DBT Cloud account](#62-setting-up-dbt-cloud-account)
   - [6.2.1. Go to the DBT Cloud website](#621-go-to-the-dbt-cloud-website)
-  - [6.2.2. Go to the DBT Cloud website](#622--go-to-the-dbt-cloud-website)
+  - [6.2.2. Go to the DBT Cloud website](#622--signup-in-dbt-cloud-website-and-verify-your-new-account)
   - [6.2.3. Choose your signup method](#623-choose-your-signup-method)
   - [6.2.4. Complete your account setup](#624-complete-your-account-setup)
   - [6.2.5. Connect a data warehouse](#625-connect-a-data-warehouse)
