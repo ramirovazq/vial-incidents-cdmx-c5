@@ -122,4 +122,5 @@ One of the main objectives of this project is to keep all elements as clear as p
 
 ## 8. References
 
-- Reference 1 [#81-reference] https://www.inegi.org.mx/temas/vehiculos/#tabulados
+### 8.1 Reference 1
+- https://www.inegi.org.mx/temas/vehiculos/#tabulados
