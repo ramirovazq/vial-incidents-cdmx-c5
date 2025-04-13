@@ -114,7 +114,7 @@ Architecture with data flow (including orchestrator actions) can be visualized i
 </p>
 
 <p align="justify">
-Objective of this project is to be clear in all elements and components involved (images\architecture_high_level_overview.png) so first take a look at this high level overview architecture
+Objective of this project is to be clear in all elements and components involved so as a high level overview take a look on (images\architecture_high_level_overview.png) 
 </p>
 
 <p align="center">
