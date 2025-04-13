@@ -285,6 +285,24 @@ You can sign up using:
 
 ### 6.2.5 Connect a data warehouse
 
+Choose default project name in DBT
+
+<p align="center">
+  <img src="images\choose_default_project_name.png">
+</p>
+
+Now you will need to upload your json file that was create in 6.1.8 step
+
+<p align="center">
+  <img src="images\dbt_upload_json_account_from_step_1.png">
+</p>
+
+
+<p align="center">
+  <img src="images\dbt_upload_json_account_from_step_2.png">
+</p>
+
+
 After creating your account, DBT Cloud will prompt you to connect to a data warehouse 
 
 <p align="center">
@@ -306,10 +324,19 @@ You’ll need credentials or a service account from your cloud provider (e.g., G
 
 ### 6.2.6 Connect a Git repository
 
-DBT Cloud uses Git to version control your DBT project.
-You can:
-- Connect to GitHub, GitLab, or Bitbucket
-- Or skip this for now and set it up later
+DBT Cloud uses Git to version control your DBT project. In our case use "git clone" with this parameter git@github.com:ramirovazq/vial-incidents-cdmx-c5.git
+
+<p align="center">
+  <img src="images\dbt_git_clone.png">
+</p>
+
+<p align="center">
+  <img src="images\git_clone_with_import.png">
+</p>
+
+<p align="center">
+  <img src="images\dbt_project_ready.png">
+</p>
 
 ### 6.2.6 Start building your project 🚀
 Once connected, you can:
