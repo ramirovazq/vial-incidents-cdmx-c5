@@ -349,6 +349,7 @@ Now in dashboard click in settings
 </p>
 
 Configure project subdirectory: analytics_engineering
+It's possible to add free description and finally click in Save button
 
 <p align="center">
   <img src="images\dbt_parameters_update.png">
