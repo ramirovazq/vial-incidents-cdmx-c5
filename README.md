@@ -57,24 +57,13 @@ $ make prod
   - 7.3.[Port Forwarding](#73-port-forwarding)
   - 7.4.[Testing the pipeline](#74-testing-the-pipeline)
   - 7.5.[Orchestrating with prefect](#75-orchestrating-with-prefect)
-- 8.[Alternative B - Cloud](#8-alternative-b---cloud)
-  - 8.1.[Creating service account](#81-creating-service-account)
-  - 8.2.[Edit Permissions](#82-edit-permissions)
-  - 8.3.[Installing Terraform](#83-installing-terraform)
-  - 8.4.[Setting up Terraform files](#84-setting-up-terraform-files)
-  - 8.5.[Orchestrating with prefect](#85-orchestrating-with-prefect)
-  - 8.6.[Deployment with prefect](#86-deployment-with-prefect)
-  - 8.7.[Running Prefect flows on docker containers](#87-running-prefect-flows-on-docker-containers)
-  - 8.8.[Dbt](#88-dbt)
-  - 8.9.[Looker Studio](#89-looker-studio)
-- 9.[Future enhancements ](#9-future-enhancements)
-- 10.[References](#10-references)
+- 8.[References](#8-references)
 ---
 
 ## 1. Description of the problem
 
 <p align="justify">
-Mexico City is one of the five most populated urban areas in the world, with approximately 22 million inhabitants. Due to its high population density and a vehicle fleet of around 6.5 million cars (https://www.inegi.org.mx/temas/vehiculos/#tabulados), vial incidents are a phenom that affects residents mobility in a daily manner. 
+Mexico City is one of the five most populated urban areas in the world, with approximately 22 million inhabitants. Due to its high population density and a vehicle fleet of around 6.5 million cars (#81-reference), vial incidents are a phenom that affects residents mobility in a daily manner. 
 </p>
 
 <p align="justify">
@@ -101,7 +90,7 @@ For setting this project it's necessary to count with:
 - Kestra (as orchestrator)
 - Metabase or Looker Studio (as visualizator tool)
 
-### 4. Data Architecture
+## 4. Data Architecture
 
 
 The architecture and data flow (including orchestrator actions) are shown in the image below (images/architecture.png).
@@ -128,4 +117,9 @@ One of the main objectives of this project is to keep all elements as clear as p
 * **Presentation Layer**: Finally, we can connect different visualization tools in this layer. In our case, we are considering **Metabase**.
 
 
-### 5. Data Description
+## 5. Data Description
+
+
+## 8. References
+
+- 8.1[8.1] https://www.inegi.org.mx/temas/vehiculos/#tabulados
