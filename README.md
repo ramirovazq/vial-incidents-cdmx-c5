@@ -126,7 +126,26 @@ For this data anlysis we are considering all historicial data available of vial 
 - 2016-2018
 - 2014-2015
 
-There is a dictionary of columns in spanish [data-dictionary-spanish](https://datos.cdmx.gob.mx/dataset/a6d1d483-65d2-4ed9-9687-1932eb0cf70f/resource/49b5360c-5922-46bd-b4f8-ed0225d5ddbf/download/diccionario-incidentes-viales-c5.xlsx)
+There is a dictionary of columns in spanish [data-dictionary-spanish](https://datos.cdmx.gob.mx/dataset/a6d1d483-65d2-4ed9-9687-1932eb0cf70f/resource/49b5360c-5922-46bd-b4f8-ed0225d5ddbf/download/diccionario-incidentes-viales-c5.xlsx). Next is the table for english people:
+
+| **Column**               | **Description**                                                                                                                                      |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Folio**                | Unique alphanumeric code assigned to each reported incident (in C5 and C2 centers). It includes the center initials, date (YY/MM/DD), and a sequence number. Example: AO/181201/10801 |
+| **Creation Date**        | Date the event record (folio) was created                                                                                                            |
+| **Creation Time**        | Time the event record (folio) was created                                                                                                            |
+| **Day of the Week**      | Day when the event record was created                                                                                                                |
+| **Closing Date**         | Date when the event record was closed                                                                                                                |
+| **Closing Time**         | Time when the event record was closed                                                                                                                |
+| **Incident Type**        | General type of incident                                                                                                                             |
+| **Incident**             | Specific incident reported                                                                                                                           |
+| **Initial Municipality** | Municipality where the incident was initially reported                                                                                               |
+| **Latitude**             | Latitude                                                                                                                                              |
+| **Longitude**            | Longitude                                                                                                                                             |
+| **Closing Code**         | Code assigned to the incident at the time of closure                                                                                                 |
+| **Classification**       | Classification or category of the incident                                                                                                           |
+| **Reporting Channel**    | Channel through which the incident was reported (e.g., phone, app)                                                                                   |
+| **Closing Municipality** | Municipality where the incident record was closed                                                                                                    |
+
 
 ## 8. References
 
