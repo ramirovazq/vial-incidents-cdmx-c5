@@ -265,6 +265,12 @@ Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
 Or go directly to the signup page:  
 👉 [https://cloud.getdbt.com/signup/](https://cloud.getdbt.com/signup/)
 
+At the end, you should verify new account:
+
+<p align="center">
+  <img src="images\verify_db_new_account.png">
+</p>
+
 ### 6.2.3 Choose your signup method
 
 You can sign up using:
