@@ -67,7 +67,7 @@ Mexico City is one of the five most populated urban areas in the world, with app
 
 
 <p align="justify">
-For this reason Mexico's government created the "Command, Control, Computing, Communications and Citizen Contact Center of Mexico City" (well known as C5) in order to find a way to monitor and improve emergencies and vial incidents. C5 is also responsible for collecting comprehensive data for public safety, medical emergencies, environment, civil protection and mobility. 
+For this reason Mexico's government created the "Command, Control, Computing, Communications and Citizen Contact Center of Mexico City" (well known as C5 [reference 2](#81-reference-2)) in order to find a way to monitor and improve emergencies and vial incidents. C5 is also responsible for collecting comprehensive data for public safety, medical emergencies, environment, civil protection and mobility. 
 </p>
 
 <p align="justify">
@@ -119,8 +119,19 @@ One of the main objectives of this project is to keep all elements as clear as p
 
 ## 5. Data Description
 
+For this data anlysis we are considering all historicial data available of vial incidents in Mexico City https://datos.cdmx.gob.mx/dataset/incidentes-viales-c5 . This data (considered as raw data) consider years:
+
+- 2022-2024
+- 2019-2021
+- 2016-2018
+- 2014-2015
+
+There is a dictionary definitios of columns [data-dictionary-spanish](https://datos.cdmx.gob.mx/dataset/a6d1d483-65d2-4ed9-9687-1932eb0cf70f/resource/49b5360c-5922-46bd-b4f8-ed0225d5ddbf/download/diccionario-incidentes-viales-c5.xlsx)
 
 ## 8. References
 
 ### 8.1 Reference 1
 - https://www.inegi.org.mx/temas/vehiculos/#tabulados
+
+### 8.1 Reference 2
+- https://www.c5.cdmx.gob.mx/dependencia/acerca-de
