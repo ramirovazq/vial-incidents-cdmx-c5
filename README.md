@@ -38,12 +38,6 @@ $ make prod
 
 # Vial Incidents reported in Mexico City - C5
 
-<p align="center">
-  <img src="images\c5_logo.png">
-</p>
-
----
-
 ---
 ## Index
 
@@ -96,8 +90,8 @@ As a way to understand vial incidents phenom it's possible to get historical dat
 ## 2. Objective
 
 <p align="justify">
-
-Develop a <code>Data Architecture</code> that could ingest historical data from 2014 (https://datos.cdmx.gob.mx/dataset/incidentes-viales-c5) to most recent data possible for vial incidents in Mexico City. This architecture should handle: ingestion, processing and data analysis. As a final product a visual dashboard should be generated containing days/hours with mayor incidence, top neighbors with major count of incidents, being a tool that could dive in some insights over categories and frequencies over the data.</p>
+Develop a data architecture capable of ingesting historical data on traffic incidents in Mexico City, starting from 2014 (https://datos.cdmx.gob.mx/dataset/incidentes-viales-c5) up to the most recent available records. This architecture should support data ingestion, processing, and analysis. The final product should be a visual dashboard highlighting the days and hours with the highest incidence, the top neighborhoods with the most reported incidents, and offer interactive insights into categories and frequency patterns within the data.
+</p>
 
 ## 3. Technologies
 
@@ -106,24 +100,10 @@ For setting this project it's necessary to count with:
 - Docker and Docker-Compose
 - A GCP account
 - DBT (we could use DBT Cloud account or local DBT with Docker)
-- Kestra (as orchestrator) but will run in Docker
-- Metabase (as visualizator) but will run in Docker
+- Kestra (as orchestrator)
+- Metabase or Looker Studio (as visualizator tool)
 
-### 3.1. Cloud Alternative
-
-
-- <p align="justify">
-  <b>Kestra</b>:  is an open-source platform that helps in automate workflows and orchestrate jobs.
-  </p>
-
-- <b>Google Cloud Platform</b>:
-
-  -	Google Cloud Storage
-  -	Big Query
-  -	Lookder Studio
-
-- <b>Data Build Tool (dbt)</b>
-
-- <p align="justify">
-  <b>Looker Studio</b>: a free tool that turns your data into insights, easy to read, share, and fully customizable dashboards and reports.
-  </p>
+### 4.0 Data Architecture
+<p align="center">
+  <img src="images\architecture_datazoom.png">
+</p>
