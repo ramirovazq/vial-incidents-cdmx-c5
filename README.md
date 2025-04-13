@@ -337,7 +337,7 @@ You’ll need credentials or a service account from your cloud provider (e.g., G
 
 ### 6.2.6 Connect a Git repository
 
-DBT Cloud uses Git to version control your DBT project. In our case use "git clone" with this parameter git@github.com:ramirovazq/vial-incidents-cdmx-c5.git
+DBT Cloud uses Git to version control your DBT project. In our case use "git clone" with this parameter ***git@github.com:ramirovazq/vial-incidents-cdmx-c5.git***
 
 <p align="center">
   <img src="images\dbt_git_clone.png">
