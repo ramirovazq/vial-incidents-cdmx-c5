@@ -338,6 +338,22 @@ DBT Cloud uses Git to version control your DBT project. In our case use "git clo
   <img src="images\dbt_project_ready.png">
 </p>
 
+Now in dashboard click in settings
+
+<p align="center">
+  <img src="images\dbt_dashboard_settings.png">
+</p>
+
+<p align="center">
+  <img src="images\dbt_click_in_settings.png">
+</p>
+
+Configure project subdirectory: analytics_engineering
+
+<p align="center">
+  <img src="images\dbt_parameters_update.png">
+</p>
+
 ### 6.2.6 Start building your project 🚀
 Once connected, you can:
 - Create DBT models
