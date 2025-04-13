@@ -354,13 +354,6 @@ Configure project subdirectory: analytics_engineering
   <img src="images\dbt_parameters_update.png">
 </p>
 
-### 6.2.6 Start building your project 🚀
-Once connected, you can:
-- Create DBT models
-- Run jobs
-- Monitor executions
-- Use the web IDE
-
 
 ## 8. References
 
