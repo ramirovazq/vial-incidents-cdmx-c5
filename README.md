@@ -62,9 +62,9 @@ $ make prod
 
 ## 1. Description of the problem
 
-<p align="justify">
-Mexico City is one of the five most populated urban areas in the world, with approximately 22 million inhabitants. Due to its high population density and a vehicle fleet of around 6.5 million cars (#81-reference), vial incidents are a phenom that affects residents mobility in a daily manner. 
-</p>
+
+Mexico City is one of the five most populated urban areas in the world, with approximately 22 million inhabitants. Due to its high population density and a vehicle fleet of around 6.5 million cars [reference 1](#81-reference), vial incidents are a phenom that affects residents mobility in a daily manner. 
+
 
 <p align="justify">
 For this reason Mexico's government created the "Command, Control, Computing, Communications and Citizen Contact Center of Mexico City" (well known as C5) in order to find a way to monitor and improve emergencies and vial incidents. C5 is also responsible for collecting comprehensive data for public safety, medical emergencies, environment, civil protection and mobility. 
@@ -122,4 +122,4 @@ One of the main objectives of this project is to keep all elements as clear as p
 
 ## 8. References
 
-- 8.1[8.1] https://www.inegi.org.mx/temas/vehiculos/#tabulados
+- [reference 1] https://www.inegi.org.mx/temas/vehiculos/#tabulados
