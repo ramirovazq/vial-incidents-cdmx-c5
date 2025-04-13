@@ -119,14 +119,14 @@ One of the main objectives of this project is to keep all elements as clear as p
 
 ## 5. Data Description
 
-For this data anlysis we are considering all historicial data available of vial incidents in Mexico City https://datos.cdmx.gob.mx/dataset/incidentes-viales-c5 . This data (considered as raw data) consider years:
+For this data anlysis we are considering all historicial data available of vial incidents in Mexico City [data-original-source-vial-incidents-c5](https://datos.cdmx.gob.mx/dataset/incidentes-viales-c5). Range of data (considered as raw data) in years:
 
 - 2022-2024
 - 2019-2021
 - 2016-2018
 - 2014-2015
 
-There is a dictionary definitios of columns [data-dictionary-spanish](https://datos.cdmx.gob.mx/dataset/a6d1d483-65d2-4ed9-9687-1932eb0cf70f/resource/49b5360c-5922-46bd-b4f8-ed0225d5ddbf/download/diccionario-incidentes-viales-c5.xlsx)
+There is a dictionary of columns in spanish [data-dictionary-spanish](https://datos.cdmx.gob.mx/dataset/a6d1d483-65d2-4ed9-9687-1932eb0cf70f/resource/49b5360c-5922-46bd-b4f8-ed0225d5ddbf/download/diccionario-incidentes-viales-c5.xlsx)
 
 ## 8. References
 
