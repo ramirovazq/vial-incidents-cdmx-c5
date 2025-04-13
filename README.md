@@ -58,7 +58,7 @@ $ make prod
   - [6.1.8. Create service account](#618-create-service-account)
 - 6.2. [Setting up DBT Cloud account](#62-setting-up-dbt-cloud-account)
   - [6.2.1. Go to the DBT Cloud website](#621-go-to-the-dbt-cloud-website)
-  - [6.2.2. Go to the DBT Cloud website](#622-go-to-the-dbt-cloud-website)
+  - [6.2.2. Go to the DBT Cloud website](#622--go-to-the-dbt-cloud-website)
   - [6.2.3. Choose your signup method](#623-choose-your-signup-method)
   - [6.2.4. Complete your account setup](#624-complete-your-account-setup)
   - [6.2.5. Connect a data warehouse](#625-connect-a-data-warehouse)
@@ -271,13 +271,9 @@ Follow these steps to create your DBT cloud account.
 ### 6.2.1 Go to the DBT Cloud website
 Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
 
-### 6.2.1 How to Create a DBT Cloud Account
-
 Follow the steps below to create a free DBT Cloud account and start building data transformation workflows.
 
-### 6.2.2  Go to the DBT Cloud website
-
-Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
+### 6.2.2  Signup in DBT Cloud website and verify your new account
 
 Or go directly to the signup page:  
 👉 [https://cloud.getdbt.com/signup/](https://cloud.getdbt.com/signup/)
