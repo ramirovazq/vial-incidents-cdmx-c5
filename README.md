@@ -48,16 +48,11 @@ $ make prod
 - 5.[Data description](#5-data-description)
 - 6.[Instructions on how to replicate the project](#6-instructions-on-how-to-replicate-the-project)
   - 6.1.[Setting up Google Cloud Platform account](#61-setting-up-google-cloud-platform-account)
-  - 6.2.[Creating a VM Instance on Google Compute Engine](#62-creating-a-vm-instance-on-google-compute-engine)
-  - 6.3.[VM instance connection configuration](#63-vm-instance-connection-configuration)
-  - 6.4.[Setting up VM instance](#64-setting-up-vm-instance)
 - 7.[Alternative A - Local](#7-alternative-a---local)
   - 7.1.[Creating a docker-compose](#71-creating-a-docker-compose)
   - 7.2.[Running a docker-compose](#72-running-a-docker-compose)
-  - 7.3.[Port Forwarding](#73-port-forwarding)
-  - 7.4.[Testing the pipeline](#74-testing-the-pipeline)
-  - 7.5.[Orchestrating with prefect](#75-orchestrating-with-prefect)
 - 8.[References](#8-references)
+
 ---
 
 ## 1. Description of the problem
@@ -145,6 +140,42 @@ There is a dictionary of columns in spanish [data-dictionary-spanish](https://da
 | **Classification**       | Classification or category of the incident                                                                                                           |
 | **Reporting Channel**    | Channel through which the incident was reported (e.g., phone, app)                                                                                   |
 | **Closing Municipality** | Municipality where the incident record was closed                                                                                                    |
+
+
+## 6 Instructions on how to replicate the project
+
+This project aims to be as reproducible as possible, while remaining as agnostic as possible to your preferred operating system. It will use tools like Docker and Docker Compose.
+Additionally, you’ll need a Google Cloud Platform (GCP) account and a DBT Cloud account (although an alternative using DBT with Docker will also be provided).
+This first section focuses on how to set up both GCP and DBT cloud account.
+
+## 6.1 Setting up Google Cloud Platform account
+
+Follow these steps to create your GCP account and access cloud services with free credits.
+
+### 1. Visit the Google Cloud official website
+Go to: [https://cloud.google.com/](https://cloud.google.com/)
+
+### 2. Click on "Get started for free"
+This will redirect you to a sign-up form where you can claim free credits (typically **$300 USD for 90 days**).
+
+### 3. Sign in with your Google account
+- If you already have a Gmail account, use it to sign in.
+- If not, you can create one here: [https://accounts.google.com/signup](https://accounts.google.com/signup)
+
+### 4. Fill in your personal and billing information
+Google will ask for:
+- Full name
+- Country
+- A valid credit or debit card (⚠️ **you won’t be charged** unless you manually upgrade after using the free credits)
+
+This step is just to verify your identity and prevent abuse of the free tier.
+
+### 5. Accept the terms and conditions
+Review and accept the usage terms, then click **"Start my free trial"**.
+
+### 6. Done! Your GCP account is now ready 🎉
+You can now access the GCP Console here:  
+[https://console.cloud.google.com/](https://console.cloud.google.com/)
 
 
 ## 8. References
