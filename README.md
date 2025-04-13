@@ -63,7 +63,7 @@ $ make prod
 ## 1. Description of the problem
 
 
-Mexico City is one of the five most populated urban areas in the world, with approximately 22 million inhabitants. Due to its high population density and a vehicle fleet of around 6.5 million cars [reference 1](#81-reference), vial incidents are a phenom that affects residents mobility in a daily manner. 
+Mexico City is one of the five most populated urban areas in the world, with approximately 22 million inhabitants. Due to its high population density and a vehicle fleet of around 6.5 million cars [reference 1](#81-reference-1), vial incidents are a phenom that affects residents mobility in a daily manner. 
 
 
 <p align="justify">
