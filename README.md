@@ -104,6 +104,24 @@ For setting this project it's necessary to count with:
 - Metabase or Looker Studio (as visualizator tool)
 
 ### 4.0 Data Architecture
-<p align="center">
-  <img src="images\architecture_datazoom.png">
+
+<p align="justify">
+Architecture with data flow (including orchestrator actions) can be visualized in next image (images\architecture.png). It has been divided in 4 blocks as a way to separte each layer, and could be easier to identify components and tools involved in each state.
 </p>
+
+<p align="center">
+  <img src="images\architecture.png">
+</p>
+
+<p align="justify">
+Objective of this project is to be clear in all elements and components involved (images\architecture_high_level_overview.png) so first take a look at this high level overview architecture
+</p>
+
+<p align="center">
+  <img src="images\architecture_high_level_overview.png">
+</p>
+
+* Data Source
+* Collect & Process
+* Engine
+* Presentation Layer
