@@ -106,7 +106,10 @@ For setting this project it's necessary to count with:
 ### 4.0 Data Architecture
 
 <p align="justify">
-Architecture with data flow (including orchestrator actions) can be visualized in next image (images\architecture.png). It has been divided in 4 blocks as a way to separte each layer, and could be easier to identify components and tools involved in each state.
+The architecture and data flow (including orchestrator actions) are shown in the image below (images/architecture.png).
+It is divided into four blocks, each representing a different layer, making it easier to identify the components and tools involved at each stage.
+This flow is designed for ***batch processing***, as data updates in the files occur yearly.
+It's important to note that this architecture follows an ***ELT*** approach, since the raw data is stored first and then processed and transformed in later steps.
 </p>
 
 <p align="center">
@@ -114,14 +117,14 @@ Architecture with data flow (including orchestrator actions) can be visualized i
 </p>
 
 <p align="justify">
-Objective of this project is to be clear in all elements and components involved so as a high level overview take a look on (images\architecture_high_level_overview.png) 
+One of the main objectives of this project is to keep all elements as clear as possible, so please refer to the following high-level overview diagram (images/architecture_high_level_overview_.png).
 </p>
 
 <p align="center">
-  <img src="images\architecture_high_level_overview.png">
+  <img src="images\architecture_high_level_overview_diagram.png">
 </p>
 
-* Data Source
-* Collect & Process
+* Data Source: refers in this case to website were original data (CSV files) will be obteined https://datos.cdmx.gob.mx/dataset/incidentes-viales-c5
+* Collect & Process: data will be uploaded to our ***datalake*** S3 bucket in GCS 
 * Engine
 * Presentation Layer
