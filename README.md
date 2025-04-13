@@ -158,6 +158,11 @@ Go to: [https://cloud.google.com/](https://cloud.google.com/)
 ### 2. Click on "Get started for free"
 This will redirect you to a sign-up form where you can claim free credits (typically **$300 USD for 90 days**).
 
+<p align="center">
+  <img src="images\free_credits.png">
+</p>
+
+
 ### 3. Sign in with your Google account
 - If you already have a Gmail account, use it to sign in.
 - If not, you can create one here: [https://accounts.google.com/signup](https://accounts.google.com/signup)
@@ -176,6 +181,15 @@ Review and accept the usage terms, then click **"Start my free trial"**.
 ### 6. Done! Your GCP account is now ready 🎉
 You can now access the GCP Console here:  
 [https://console.cloud.google.com/](https://console.cloud.google.com/)
+
+
+### 7. Open GCP console
+
+Open console in GCP [https://console.cloud.google.com/](https://console.cloud.google.com/) and create a new project: "vialincidentsc5"
+
+<p align="center">
+  <img src="images\create_project_vialincidentsc5.png">
+</p>
 
 
 ## 8. References
