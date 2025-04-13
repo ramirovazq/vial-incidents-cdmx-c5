@@ -152,10 +152,10 @@ This first section focuses on how to set up both GCP and DBT cloud account.
 
 Follow these steps to create your GCP account and access cloud services with free credits.
 
-### 1. Visit the Google Cloud official website
+### 6.1.1 Visit the Google Cloud official website
 Go to: [https://cloud.google.com/](https://cloud.google.com/)
 
-### 2. Click on "Get started for free"
+### 6.1.2 Click on "Get started for free"
 This will redirect you to a sign-up form where you can claim free credits (typically **$300 USD for 90 days**).
 
 <p align="center">
@@ -163,11 +163,11 @@ This will redirect you to a sign-up form where you can claim free credits (typic
 </p>
 
 
-### 3. Sign in with your Google account
+### 6.1.3 Sign in with your Google account
 - If you already have a Gmail account, use it to sign in.
 - If not, you can create one here: [https://accounts.google.com/signup](https://accounts.google.com/signup)
 
-### 4. Fill in your personal and billing information
+### 6.1.4 Fill in your personal and billing information
 Google will ask for:
 - Full name
 - Country
@@ -175,15 +175,14 @@ Google will ask for:
 
 This step is just to verify your identity and prevent abuse of the free tier.
 
-### 5. Accept the terms and conditions
+### 6.1.5 Accept the terms and conditions
 Review and accept the usage terms, then click **"Start my free trial"**.
 
-### 6. Done! Your GCP account is now ready 🎉
+### 6.1.6 Done! Your GCP account is now ready 🎉
 You can now access the GCP Console here:  
 [https://console.cloud.google.com/](https://console.cloud.google.com/)
 
-
-### 7. Open GCP console
+### 6.1.7 Open GCP console
 
 Open console in GCP [https://console.cloud.google.com/](https://console.cloud.google.com/) and create a new project: "vialincidentsc5"
 
@@ -191,6 +190,59 @@ Open console in GCP [https://console.cloud.google.com/](https://console.cloud.go
   <img src="images\create_project_vialincidentsc5.png">
 </p>
 
+### 6.1.8 Create serive account
+
+Select GCP IAM > create service account
+
+<p align="center">
+  <img src="images\iam_service_account.png">
+</p>
+
+<p align="center">
+  <img src="images\create_service_account.png">
+</p>
+
+Add details for this new service account
+<p align="center">
+  <img src="images\data_service_acccount.png">
+</p>
+
+Add cloud storage > Storage admin role
+<p align="center">
+  <img src="images\cloud_storage_admin.png">
+</p>
+
+Add Big Query > Big Query admin role
+<p align="center">
+  <img src="images\big_query_admin.png">
+</p>
+
+<p align="center">
+  <img src="images\done_servie_account.png">
+</p>
+
+Click in recently created service account
+<p align="center">
+  <img src="images\select_recently_created_service_account.png">
+</p>
+<p align="center">
+  <img src="images\search_for_keys_tab_in_new_service_account.png">
+</p>
+
+Click in add new key
+<p align="center">
+  <img src="images\add_new_key.png">
+</p>
+
+Add new key as json
+<p align="center">
+  <img src="images\add_new_key_json.png">
+</p>
+
+Add new key as json
+<p align="center">
+  <img src="images\download_recently_created_key_json.png">
+</p>
 
 ## 8. References
 
