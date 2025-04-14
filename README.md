@@ -532,6 +532,24 @@ It was created following next code:
 
 ### 7.3 Run Metabase as visualizator
 
+Now let's pull metabase using docker
+```
+$ make pull-metabase
+```
+
+Now run metabase using docker
+```
+$ make run-metabase
+```
+
+Visit next url, where you should wait for some minutes while metabase is being installed
+
+http://localhost:3000/
+
+
+<p align="center">
+  <img src="metabase_being_installed.png">
+</p>
 
 ## 8. References
 
