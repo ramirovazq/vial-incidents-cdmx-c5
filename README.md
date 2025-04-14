@@ -501,6 +501,10 @@ Do a deploy of the project:
 $ make prod
 ```
 
+<p align="center">
+  <img src="images\output_final_dbt_deploy_production.png">
+</p>
+
 
 ## 8. References
 
