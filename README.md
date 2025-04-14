@@ -548,7 +548,13 @@ http://localhost:3000/
 
 
 <p align="center">
-  <img src="metabase_being_installed.png">
+  <img src="images\metabase_being_installed.png">
+</p>
+
+Wait and click in start like in next image
+
+<p align="center">
+  <img src="images\click_in_start_metabase.png">
 </p>
 
 ## 8. References
