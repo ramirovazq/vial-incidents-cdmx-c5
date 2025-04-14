@@ -580,7 +580,7 @@ First click in new > SQL
   <img src="images\metabase_click_new.png">
 </p>
 
-paste there next code and save as 'list_of_incidents':
+paste there next code and save as 'list_of_incidents' as an example:
 
 ```
 SELECT
@@ -597,6 +597,15 @@ LIMIT
 <p align="center">
   <img src="images\list_of_incidents.png">
 </p>
+
+
+As an example of 2 tiles
+
+<p align="center">
+  <img src="images\example_dashboard_2_tiles.png">
+</p>
+
+
 
 ## 8. References
 
