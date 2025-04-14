@@ -458,6 +458,15 @@ Will be necesary to substitute content of field with content of json file
 </p>
 
 
+```
+$ make post-gcp-create-flow
+```
+then you should execute new flow
+```
+$ make execute-gcp-kv-flow
+```
+
+
 ### 7.3 Click in create create button in Kestra
 
 
