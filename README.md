@@ -505,7 +505,6 @@ $ make prod
   <img src="images\output_final_dbt_deploy_production.png">
 </p>
 
-
 ## 8. References
 
 ### 8.1 Reference 1
