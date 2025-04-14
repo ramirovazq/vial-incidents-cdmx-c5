@@ -20,26 +20,18 @@ build:
 prod:
 	docker compose run --rm $(SERVICE) build --vars '{'is_test_run': 'false'}'
 
-# Entrar a una shell interactiva dentro del contenedor
-shell:
-	docker compose run --rm $(SERVICE) bash
-
 # Correr todos los modelos
 run:
-	docker compose run --rm $(SERVICE) dbt run
+	docker compose run --rm $(SERVICE) run
 
 # Correr solo un modelo específico: make run-model MODEL=model_name
 run-model:
-	docker compose run --rm $(SERVICE) dbt run --select $(MODEL)
+	docker compose run --rm $(SERVICE) run --select $(MODEL)
 
 # Testear el proyecto
 test:
-	docker compose run --rm $(SERVICE) dbt test
+	docker compose run --rm $(SERVICE) test
 
 # Ver docs (solo genera los archivos; necesitas servirlos tú mismo si quieres verlos)
 docs-generate:
-	docker compose run --rm $(SERVICE) dbt docs generate
-
-# Limpiar contenedores y volúmenes (si alguna vez lo necesitás)
-clean:
-	docker compose down -v
+	docker compose run --rm $(SERVICE) docs generate
