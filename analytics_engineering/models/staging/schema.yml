@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: raw
-    database: utility-cathode-448702-g7
-    schema: vial_incidents 
+    database: vialincidentsc5
+    schema: vial_incidents_13042025 
 
     tables:
       - name: external_vial_incidents_2014_2015_brz
