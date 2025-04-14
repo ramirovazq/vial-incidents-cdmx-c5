@@ -28,6 +28,14 @@ This repository aims to show a dashboard of vial incidents in CDMX
   - [6.2.4. Complete your account setup](#624-complete-your-account-setup)
   - [6.2.5. Connect a data warehouse](#625-connect-a-data-warehouse)
   - [6.2.6. Connect a Git repository](#626-connect-a-git-repository)
+  - [7. Run the project](#7-run-the-project)
+  - [7.1 Necessary to run Kestra (orchestrator) with docker](#71-necessary-to-run-kestra-orchestrator-with-docker)
+  - [7.2 Necessary to add next 2 flows in Kestra](#72-necessary-to-add-next-2-flows-in-kestra)
+  - [7.3 Add flow for upload data to bucket](#73-add-flow-for-upload-data-to-bucket)
+  - [7.4 Run DBT in docker and docker-compose](#74-run-dbt-in-docker-and-docker-compose)
+  - [7.5 Validate tables generated in BigQuery](#75-validate-tables-generated-in-bigquery)
+  - [7.6 Run Metabase as visualizator](#76-run-metabase-as-visualizator)
+
 
 
 - 7.[References](#8-references)
