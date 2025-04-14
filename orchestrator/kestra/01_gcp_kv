@@ -18,13 +18,13 @@ tasks:
     type: io.kestra.plugin.core.kv.Set
     key: GCP_BUCKET_NAME
     kvType: STRING
-    value: vial_incidents # TODO make sure it's globally unique!
+    value: vial_incidents_13042025
 
   - id: gcp_dataset
     type: io.kestra.plugin.core.kv.Set
     key: GCP_DATASET
     kvType: STRING
-    value: vial_incidents
+    value: vial_incidents_13042025
 
   - id: gcp_creds
     type: io.kestra.plugin.core.kv.Set
