@@ -557,6 +557,22 @@ Wait and click in start like in next image
   <img src="images\click_in_start_metabase.png">
 </p>
 
+Next step is to select language, and follow screens with your data:
+- name
+- last name
+- email
+- company, could be 'personal'
+- password (don't forget to write in a safe plase, and don't forget it)
+
+<p align="center">
+  <img src="images\select_big_query.png">
+</p>
+
+Now you should select a name to show, in my case 'MyBigquery', then select your json file (the one was downloaded from GCP) we'be been using all this setup
+<p align="center">
+  <img src="images\configure_metabase_name_to_show.png">
+</p>
+
 ## 8. References
 
 ### 8.1 Reference 1
