@@ -473,6 +473,14 @@ Now we need to create new flow that will be in charge of upload data to GCP buck
 $ make post-upload-and-create-external-flow
 ```
 
+then you should execute new flows for upload data. Take in count that this could take time to upload to GCS bucket
+```
+$ make post-upload-2014-2015
+$ make post-upload-2016-2018
+$ make post-upload-2019-2021
+$ make post-upload-2022-2024
+```
+
 
 
 
