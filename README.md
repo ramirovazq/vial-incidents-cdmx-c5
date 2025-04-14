@@ -446,9 +446,59 @@ $ make post-upload-2019-2021
 $ make post-upload-2022-2024
 ```
 
+### 7.1 Run DBT in docker and docker-compose
 
+Now we will run dbt using docker, so first step is to change directory to dbt
 
+```
+$ cd dbt
+```
 
+- Create `profiles.yml` file in `~/.dbt/` in your local machine or add the following code in your existing `profiles.yml` - 
+  ```yaml
+bq-dbt-workshop:
+  outputs:
+    dev:
+      dataset: vial_incidents_13042025
+      fixed_retries: 1
+      keyfile: /secrets/google_credentials.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: vialincidentsc5
+      threads: 4
+      timeout_seconds: 300
+      type: bigquery
+  target: dev
+  ```
+
+- Create `google_credentials.json` file in `~/.google/credentials/google_credentials.json` in your local machine with the content of gcp json file has being used for authentication
+
+```
+$ docker compose build 
+```
+
+Now run to verify
+
+```
+$ make version
+$ make debug
+```
+
+If everything is fine, then install dependencies:
+```
+$ make deps
+```
+
+Do a build of the project:
+```
+$ make build
+```
+
+Do a deploy of the project:
+```
+$ make prod
+```
 
 
 ## 8. References
