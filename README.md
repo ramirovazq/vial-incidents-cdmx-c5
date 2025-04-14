@@ -605,8 +605,23 @@ As an example of 2 tiles
   <img src="images\example_dashboard_2_tiles.png">
 </p>
 
+It's recomendable to use table that start with 'Report' cause are aggregated queries 
 
+<p align="center">
+  <img src="images\metabase_reports.png">
+</p>
 
+As example of questions:
+
+<p align="center">
+  <img src="images\question_1_example.png">
+</p>
+
+<p align="center">
+  <img src="images\question_2_example.png">
+</p>
+
+ 
 ## 8. References
 
 ### 8.1 Reference 1
@@ -617,9 +632,10 @@ As an example of 2 tiles
 
 
 
-## Steps to generate infrastructure
+## Steps to generate infrastructure using terraform as alternative way to test infra as code
 ```
 $ cd infraestructure/
+$ export GOOGLE_CREDENTIALS='/Users/file.json'
 $ terraform init
 $ terraform plan
 $ terraform apply
