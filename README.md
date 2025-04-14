@@ -392,10 +392,72 @@ As first step use make file with next command:
 $ make run-kestra
 ```
 
-What this command does behind:
+What this command does behind, is to run Kestra using docker:
 ```
 $ docker run --pull=always --rm -it -p 8080:8080 --user=root -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp kestra/kestra:latest server local
 ```
+
+When in terminal appears something like next image means kestra is running:
+
+<p align="center">
+  <img src="images\kestra_running.png">
+</p>
+
+Now open a browser and visit 
+```
+ http://localhost:8080
+ ```
+You should see somethin similar:
+ <p align="center">
+  <img src="images\kestra_welcome.png">
+</p>
+
+Now with Kestra we will create necessary infraestructure:
+- BigQuery dataset
+- Google cloud storage that will storage CSV files from source
+
+### 7.2 Necessary to add next 2 flows in Kestra
+- 01_gcp_kv: this ones are necessary to connect with BigQuery
+- 02_gcp_create_bucket_and_dataset : will create bucket and dataset in BigQuery
+
+```
+curl -X POST http://localhost:8080/api/v1/flows -H "Content-Type:application/x-yaml" -d "id: 01_gcp_kv
+namespace: vial_incidents_project
+
+tasks:
+  - id: gcp_project_id
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_PROJECT_ID
+    kvType: STRING
+    value: utility-cathode-448702-g7 
+
+  - id: gcp_location
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_LOCATION
+    kvType: STRING
+    value: us-central1
+
+  - id: gcp_bucket_name
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_BUCKET_NAME
+    kvType: STRING
+    value: vial_incidents # TODO make sure it's globally unique!
+
+  - id: gcp_dataset
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_DATASET
+    kvType: STRING
+    value: vial_incidents
+
+  - id: gcp_creds
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_CREDS
+    kvType: STRING
+    value: replace_here_with_your_file_json"
+```
+
+### 7.3 Click in create create button in Kestra
+
 
 
 

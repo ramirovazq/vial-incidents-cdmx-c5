@@ -7,3 +7,9 @@ run-kestra:
 		-v /var/run/docker.sock:/var/run/docker.sock \
 		-v /tmp:/tmp \
 		kestra/kestra:latest server local
+
+post-gcp-kv-flow:
+	curl -X POST http://localhost:8080/api/v1/flows -H "Content-Type: application/x-yaml" --data-binary @orchestrator/kestra/01_gcp_kv
+
+post-gcp-bucket-dataset-flow:
+	curl -X POST http://localhost:8080/api/v1/flows -H "Content-Type: application/x-yaml" --data-binary @orchestrator/kestra/01_gcp_kv

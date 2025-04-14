@@ -6,7 +6,7 @@ tasks:
     type: io.kestra.plugin.core.kv.Set
     key: GCP_PROJECT_ID
     kvType: STRING
-    value: utility-cathode-448702-g7 
+    value: vialincidentsc5 
 
   - id: gcp_location
     type: io.kestra.plugin.core.kv.Set
