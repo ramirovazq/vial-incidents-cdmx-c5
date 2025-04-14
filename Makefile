@@ -13,3 +13,6 @@ post-gcp-kv-flow:
 
 execute-gcp-kv-flow:
 	$ curl -X POST http://localhost:8080/api/v1/executions/vial_incidents_project/01_gcp_kv
+
+post-gcp-create-flow:
+	curl -X POST http://localhost:8080/api/v1/flows -H "Content-Type: application/x-yaml" --data-binary @orchestrator/kestra/02_gcp_create_bucket_and_dataset
