@@ -505,6 +505,34 @@ $ make prod
   <img src="images\output_final_dbt_deploy_production.png">
 </p>
 
+### 7.2 Validate tables generated in BigQuery 
+
+Now go to your GCP > BigQuery account and validate all tables generated as 'dim_' and 'fact_table'. As you can see ***fact_table*** is partitioned by year. In fact for the size of files wouldn't be necessary, but it was additioned for learning purposes.
+
+<p align="center">
+  <img src="images\fact_table_partitioned.png">
+</p>
+
+It was created following next code:
+```
+{{ config(
+    materialized='table',
+    partition_by={
+        "field": "year_creation_date",
+        "data_type": "INT64",
+        "range": {
+            "start": 2014,
+            "end": 2024,
+            "interval": 1
+        }
+    },
+    cluster_by=["month_creation_date", "hour_creation_date","index_incident"]) 
+}}
+```
+
+### 7.3 Run Metabase as visualizator
+
+
 ## 8. References
 
 ### 8.1 Reference 1

@@ -35,3 +35,9 @@ test:
 # Ver docs (solo genera los archivos; necesitas servirlos tú mismo si quieres verlos)
 docs-generate:
 	docker compose run --rm $(SERVICE) docs generate
+
+pull-metabase:
+	docker pull metabase/metabase:latest
+
+run-metabase:
+	docker run -d -p 3000:3000 --name metabase metabase/metabase
