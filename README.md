@@ -573,6 +573,31 @@ Now you should select a name to show, in my case 'MyBigquery', then select your 
   <img src="images\configure_metabase_name_to_show.png">
 </p>
 
+Finally lets add 2 tiles to metabase
+
+First click in new > SQL
+<p align="center">
+  <img src="images\metabase_click_new.png">
+</p>
+
+pase there next code and save as 'list_of_incidents':
+
+```
+SELECT
+  `vial_incidents_13042025.dim_incident`.`index_incident` AS `index_incident`,
+  `vial_incidents_13042025.dim_incident`.`incident` AS `incident`
+FROM
+  `vial_incidents_13042025.dim_incident`
+ORDER BY
+  `vial_incidents_13042025.dim_incident`.`incident` ASC
+LIMIT
+  1048575
+```
+
+<p align="center">
+  <img src="images\list_of_incidents.png">
+</p>
+
 ## 8. References
 
 ### 8.1 Reference 1
