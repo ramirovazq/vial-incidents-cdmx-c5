@@ -580,7 +580,7 @@ First click in new > SQL
   <img src="images\metabase_click_new.png">
 </p>
 
-pase there next code and save as 'list_of_incidents':
+paste there next code and save as 'list_of_incidents':
 
 ```
 SELECT
