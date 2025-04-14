@@ -463,7 +463,7 @@ $ make post-gcp-create-flow
 ```
 then you should execute new flow
 ```
-$ make execute-gcp-kv-flow
+$ make execute-gcp-create-flow
 ```
 
 
