@@ -65,9 +65,7 @@ $ make prod
   - [6.2.6. Connect a Git repository](#626-connect-a-git-repository)
 
 
-- 7.[Alternative A - Local](#7-alternative-a---local)
-  - 7.1.[Creating a docker-compose](#71-creating-a-docker-compose)
-  - 7.2.[Running a docker-compose](#72-running-a-docker-compose)
+- 7.[References](#8-references)
 - 8.[References](#8-references)
 
 ---
@@ -96,6 +94,7 @@ Develop a data architecture capable of ingesting historical data on traffic inci
 
 For setting this project it's necessary to count with:
 
+- Git installed
 - Docker and Docker-Compose
 - A GCP account
 - DBT (we could use DBT Cloud account or local DBT with Docker)
@@ -367,6 +366,38 @@ It's possible to add free description and finally click in Save button
 <p align="center">
   <img src="images\dbt_parameters_update.png">
 </p>
+
+
+## 7. Run the project 
+
+With these 2 steps configured (DBT cloud account and GCP account), next step will consist of run project. 
+
+So zero step is to clone the repository to your local machine, run the following command in your terminal:
+
+```bash
+git clone https://github.com/ramirovazq/vial-incidents-cdmx-c5.git
+```
+
+Then, navigate into the project directory:
+```
+cd vial-incidents-cdmx-c5
+```
+
+
+### 7.1 Necessary to run Kestra (orchestrator) with docker
+
+As first step use make file with next command:
+
+```
+$ make run-kestra
+```
+
+What this command does behind:
+```
+$ docker run --pull=always --rm -it -p 8080:8080 --user=root -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp kestra/kestra:latest server local
+```
+
+
 
 
 ## 8. References
