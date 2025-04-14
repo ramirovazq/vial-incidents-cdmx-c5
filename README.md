@@ -466,8 +466,13 @@ then you should execute new flow
 $ make execute-gcp-create-flow
 ```
 
+### 7.3 Add flow for upload data to bucket
 
-### 7.3 Click in create create button in Kestra
+Now we need to create new flow that will be in charge of upload data to GCP bucket and also of create table as external in gcp
+```
+$ make post-upload-and-create-external-flow
+```
+
 
 
 
