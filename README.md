@@ -454,8 +454,9 @@ Now we will run dbt using docker, so first step is to change directory to dbt
 $ cd dbt
 ```
 
-- Create `profiles.yml` file in `~/.dbt/` in your local machine or add the following code in your existing `profiles.yml` - 
-  ```yaml
+- Create `profiles.yml` file in `~/.dbt/` in your local machine or add the following code in your existing `profiles.yml`
+
+```yaml
 bq-dbt-workshop:
   outputs:
     dev:
@@ -470,7 +471,7 @@ bq-dbt-workshop:
       timeout_seconds: 300
       type: bigquery
   target: dev
-  ```
+```
 
 - Create `google_credentials.json` file in `~/.google/credentials/google_credentials.json` in your local machine with the content of gcp json file has being used for authentication
 
