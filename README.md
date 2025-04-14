@@ -407,7 +407,7 @@ Now open a browser and visit
 ```
  http://localhost:8080
  ```
-You should see somethin similar:
+You should see something similar:
  <p align="center">
   <img src="images\kestra_welcome.png">
 </p>
@@ -426,10 +426,35 @@ In a new terminal run next command to add flow **01_gcp_kv** to your kestra runn
 ```
 $ make post-gcp-kv-flow
 ```
+then you should execute
+```
+$ make execute-gcp-kv-flow
+```
+
 
 Now add your json file to kestra, so click in namespaces and select vial_incidents_project:
 <p align="center">
   <img src="images\namespaces_in_kestra.png">
+</p>
+
+
+<p align="center">
+  <img src="images\kestra_click_in_kv_store.png">
+</p>
+
+Then edit GCP_CREDS
+
+<p align="center">
+  <img src="images\edit_gcp_creds.png">
+</p>
+
+Will be necesary to substitute content of field with content of json file
+<p align="center">
+  <img src="images\replace_this_text_with_content_of_json_file.png">
+</p>
+
+<p align="center">
+  <img src="images\replace_content.png">
 </p>
 
 
