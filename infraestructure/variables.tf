@@ -1,6 +1,6 @@
 variable "project" {
   description = "Project"
-  default     = "utility-cathode-448702-g7"
+  default     = "vialincidentsc5"
 }
 
 
@@ -16,12 +16,12 @@ variable "region" {
 
 variable "bq_dataset_name" {
   description = "My BigQuery Dataset Name"
-  default     = "vial_incidents"
+  default     = "vial_incidents_13042025"
 }
 
 variable "gcs_bucket_name" {
   description = "My Data Lake for vial incidents files dezoomcamp final project"
-  default     = "vial_incidents"
+  default     = "vial_incidents_13042025"
 }
 
 variable "gcs_storage_class" {
