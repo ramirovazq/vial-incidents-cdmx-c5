@@ -21,6 +21,21 @@ This repository aims to show a dashboard of vial incidents in CDMX
   - [6.1.6. Done! Your GCP account is now ready](#616-done-your-gcp-account-is-now-ready)
   - [6.1.7. Open GCP Console](#617-open-gcp-console)
   - [6.1.8. Create service account](#618-create-service-account)
+- 7.[7. Run the project](#7-run-the-project)
+  - [7.1 Necessary to run Kestra (orchestrator) with docker](#71-necessary-to-run-kestra-orchestrator-with-docker)
+  - [7.2 Necessary to add next 2 flows in Kestra](#72-necessary-to-add-next-2-flows-in-kestra)
+  - [7.3 Add flow for upload data to bucket](#73-add-flow-for-upload-data-to-bucket)
+  - [7.4 Run DBT in docker and docker-compose](#74-run-dbt-in-docker-and-docker-compose)
+  - [7.5 Validate tables generated in BigQuery](#75-validate-tables-generated-in-bigquery)
+  - [7.6 Run Metabase as visualizator](#76-run-metabase-as-visualizator)
+- 8.[References](#8-references)
+  - [8.1 Reference 1](#81-reference-1)
+  - [8.1 Reference 2](#81-reference-2)
+
+
+---
+Preferable tu use docker with dbt section 7.4 to reproduce in a quick way
+
 - 6.2. [Setting up DBT Cloud account](#62-setting-up-dbt-cloud-account)
   - [6.2.1. Go to the DBT Cloud website](#621-go-to-the-dbt-cloud-website)
   - [6.2.2. Go to the DBT Cloud website](#622--signup-in-dbt-cloud-website-and-verify-your-new-account)
@@ -28,18 +43,7 @@ This repository aims to show a dashboard of vial incidents in CDMX
   - [6.2.4. Complete your account setup](#624-complete-your-account-setup)
   - [6.2.5. Connect a data warehouse](#625-connect-a-data-warehouse)
   - [6.2.6. Connect a Git repository](#626-connect-a-git-repository)
-  - [7. Run the project](#7-run-the-project)
-  - [7.1 Necessary to run Kestra (orchestrator) with docker](#71-necessary-to-run-kestra-orchestrator-with-docker)
-  - [7.2 Necessary to add next 2 flows in Kestra](#72-necessary-to-add-next-2-flows-in-kestra)
-  - [7.3 Add flow for upload data to bucket](#73-add-flow-for-upload-data-to-bucket)
-  - [7.4 Run DBT in docker and docker-compose](#74-run-dbt-in-docker-and-docker-compose)
-  - [7.5 Validate tables generated in BigQuery](#75-validate-tables-generated-in-bigquery)
-  - [7.6 Run Metabase as visualizator](#76-run-metabase-as-visualizator)
 
-
-
-- 7.[References](#8-references)
-- 8.[References](#8-references)
 
 ---
 
@@ -236,110 +240,6 @@ Add new key as json
   <img src="images\download_recently_created_key_json.png">
 </p>
 
-## 6.2 Setting up DBT cloud account
-
-Follow these steps to create your DBT cloud account. 
-
-### 6.2.1 Go to the DBT Cloud website
-Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
-
-Follow the steps below to create a free DBT Cloud account and start building data transformation workflows.
-
-### 6.2.2  Signup in DBT Cloud website and verify your new account
-
-Or go directly to the signup page:  
-👉 [https://cloud.getdbt.com/signup/](https://cloud.getdbt.com/signup/)
-
-At the end, you should verify new account:
-
-<p align="center">
-  <img src="images\verify_db_new_account.png">
-</p>
-
-### 6.2.3 Choose your signup method
-
-You can sign up using:
-- **Email and password**, or
-- A **GitHub** or **Google** account (recommended for easy integration)
-
-### 6.2.4 Complete your account setup
-
-- Enter your name and company information (if asked)
-- Choose a **free plan** (Starter Plan)
-- Set your **workspace name**
-
-### 6.2.5 Connect a data warehouse
-
-Choose default project name in DBT
-
-<p align="center">
-  <img src="images\choose_default_project_name.png">
-</p>
-
-Now you will need to upload your json file that was create in 6.1.8 step
-
-<p align="center">
-  <img src="images\dbt_upload_json_account_from_step_1.png">
-</p>
-
-
-<p align="center">
-  <img src="images\dbt_upload_json_account_from_step_2.png">
-</p>
-
-
-After creating your account, DBT Cloud will prompt you to connect to a data warehouse 
-
-<p align="center">
-  <img src="images\dbt_do_a_connection.png">
-</p>
-
-<p align="center">
-  <img src="images\dbt_select_bigquery_connection.png">
-</p>
-
-Select Connection with BigQuery and put in dataset: vial_incidents
-
-<p align="center">
-  <img src="images\dbt_configure_connection.png">
-</p>
-
-
-You’ll need credentials or a service account from your cloud provider (e.g., GCP for BigQuery).
-
-### 6.2.6 Connect a Git repository
-
-DBT Cloud uses Git to version control your DBT project. In our case use "git clone" with this parameter ```git@github.com:ramirovazq/vial-incidents-cdmx-c5.git```
-
-<p align="center">
-  <img src="images\dbt_git_clone.png">
-</p>
-
-<p align="center">
-  <img src="images\git_clone_with_import.png">
-</p>
-
-<p align="center">
-  <img src="images\dbt_project_ready.png">
-</p>
-
-Now in dashboard click in settings
-
-<p align="center">
-  <img src="images\dbt_dashboard_settings.png">
-</p>
-
-<p align="center">
-  <img src="images\dbt_click_in_settings.png">
-</p>
-
-Configure project subdirectory: analytics_engineering
-It's possible to add free description and finally click in Save button
-
-<p align="center">
-  <img src="images\dbt_parameters_update.png">
-</p>
-
 
 ## 7. Run the project 
 
@@ -454,7 +354,7 @@ $ make post-upload-2019-2021
 $ make post-upload-2022-2024
 ```
 
-### 7.1 Run DBT in docker and docker-compose
+### 7.4 Run DBT in docker and docker-compose
 
 Now we will run dbt using docker, so first step is to change directory to dbt
 
@@ -513,7 +413,7 @@ $ make prod
   <img src="images\output_final_dbt_deploy_production.png">
 </p>
 
-### 7.2 Validate tables generated in BigQuery 
+### 7.5 Validate tables generated in BigQuery 
 
 Now go to your GCP > BigQuery account and validate all tables generated as 'dim_' and 'fact_table'. As you can see ***fact_table*** is partitioned by year. In fact for the size of files wouldn't be necessary, but it was additioned for learning purposes.
 
@@ -538,7 +438,7 @@ It was created following next code:
 }}
 ```
 
-### 7.3 Run Metabase as visualizator
+### 7.6 Run Metabase as visualizator
 
 Now let's pull metabase using docker
 ```
@@ -635,7 +535,7 @@ As example of questions:
 ### 8.1 Reference 1
 - https://www.inegi.org.mx/temas/vehiculos/#tabulados
 
-### 8.1 Reference 2
+### 8.2 Reference 2
 - https://www.c5.cdmx.gob.mx/dependencia/acerca-de
 
 
@@ -648,3 +548,110 @@ $ terraform init
 $ terraform plan
 $ terraform apply
 ```
+
+## This section for DBT I don't encorage you tu use this projec
+Reason is that when testing if don't save the key in github repository, was difficult to connect to dbt cloud. But feel free to consider it if you can bypass this step of sharing key generated by dbt, in github repository.
+
+## 6.2 Setting up DBT cloud account
+
+Follow these steps to create your DBT cloud account. I wrote this thinking in that would be easy to reproduce in cloud, but I found that it's easier (I mean more reproducable) using dbt with docker in your local, so please refer to 7.4 Run DBT in docker and docker-compose
+
+### 6.2.1 Go to the DBT Cloud website
+Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
+
+Follow the steps below to create a free DBT Cloud account and start building data transformation workflows.
+
+### 6.2.2  Signup in DBT Cloud website and verify your new account
+
+Or go directly to the signup page:  
+👉 [https://cloud.getdbt.com/signup/](https://cloud.getdbt.com/signup/)
+
+At the end, you should verify new account:
+
+<p align="center">
+  <img src="images\verify_db_new_account.png">
+</p>
+
+### 6.2.3 Choose your signup method
+
+You can sign up using:
+- **Email and password**, or
+- A **GitHub** or **Google** account (recommended for easy integration)
+
+### 6.2.4 Complete your account setup
+
+- Enter your name and company information (if asked)
+- Choose a **free plan** (Starter Plan)
+- Set your **workspace name**
+
+### 6.2.5 Connect a data warehouse
+
+Choose default project name in DBT
+
+<p align="center">
+  <img src="images\choose_default_project_name.png">
+</p>
+
+Now you will need to upload your json file that was create in 6.1.8 step
+
+<p align="center">
+  <img src="images\dbt_upload_json_account_from_step_1.png">
+</p>
+
+
+<p align="center">
+  <img src="images\dbt_upload_json_account_from_step_2.png">
+</p>
+
+
+After creating your account, DBT Cloud will prompt you to connect to a data warehouse 
+
+<p align="center">
+  <img src="images\dbt_do_a_connection.png">
+</p>
+
+<p align="center">
+  <img src="images\dbt_select_bigquery_connection.png">
+</p>
+
+Select Connection with BigQuery and put in dataset: vial_incidents
+
+<p align="center">
+  <img src="images\dbt_configure_connection.png">
+</p>
+
+
+You’ll need credentials or a service account from your cloud provider (e.g., GCP for BigQuery).
+
+### 6.2.6 Connect a Git repository
+
+DBT Cloud uses Git to version control your DBT project. In our case use "git clone" with this parameter ```git@github.com:ramirovazq/vial-incidents-cdmx-c5.git```
+
+<p align="center">
+  <img src="images\dbt_git_clone.png">
+</p>
+
+<p align="center">
+  <img src="images\git_clone_with_import.png">
+</p>
+
+<p align="center">
+  <img src="images\dbt_project_ready.png">
+</p>
+
+Now in dashboard click in settings
+
+<p align="center">
+  <img src="images\dbt_dashboard_settings.png">
+</p>
+
+<p align="center">
+  <img src="images\dbt_click_in_settings.png">
+</p>
+
+Configure project subdirectory: analytics_engineering
+It's possible to add free description and finally click in Save button
+
+<p align="center">
+  <img src="images\dbt_parameters_update.png">
+</p>
