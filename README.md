@@ -30,7 +30,7 @@ This repository aims to show a dashboard of vial incidents in CDMX
   - [7.6 Run Metabase as visualizator](#76-run-metabase-as-visualizator)
 - 8.[References](#8-references)
   - [8.1 Reference 1](#81-reference-1)
-  - [8.1 Reference 2](#81-reference-2)
+  - [8.1 Reference 2](#82-reference-2)
 
 
 ---
