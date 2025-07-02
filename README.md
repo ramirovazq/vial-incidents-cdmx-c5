@@ -47,6 +47,16 @@ Preferable tu use docker with dbt section 7.4 to reproduce in a quick way
 
 ---
 
+## 0.0 Generate a project in GCP Console
+## 0.1 Generate a user service in GCP (bigquery admin, storage admin, storage object admin). Donwload json file
+## 0.2 Export json file $ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
+## 0.3 Create conda environment $ conda create -n improvec5env python=3.9
+## 0.3.1 Move to infraestructure directory $ ~/CODE_LOCAL/improve_c5/vial-incidents-cdmx-c5/infraestructure
+## 0.4 $ terraform init
+## 0.4 $ terraform plan
+## 0.5 $ terraform apply
+## 0.6 $ terraform destroy
+
 ## 1. Description of the problem
 
 

@@ -13,7 +13,7 @@ provider "google" {
 }
 
 
-resource "google_storage_bucket" "project-bucket" {
+resource "google_storage_bucket" "project_bucket" {
   name          = var.gcs_bucket_name
   location      = var.location
   force_destroy = true
@@ -26,6 +26,12 @@ resource "google_storage_bucket" "project-bucket" {
       type = "Delete"
     }
   }
+}
+
+resource "google_storage_bucket_object" "raw" {
+  name    = "raw/"
+  content = "raw folder for original files"
+  bucket  = google_storage_bucket.project_bucket.name
 }
 
 resource "google_bigquery_dataset" "project_dataset" {
