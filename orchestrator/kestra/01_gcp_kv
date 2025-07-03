@@ -6,11 +6,11 @@ tasks:
     type: io.kestra.plugin.core.kv.Set
     key: GCP_PROJECT_ID
     kvType: STRING
-    value: vialincidentsc5 
+    value: vialincidentsc5-459704 
 
-  - id: gcp_location
+  - id: gcp_region
     type: io.kestra.plugin.core.kv.Set
-    key: GCP_LOCATION
+    key: GCP_REGION
     kvType: STRING
     value: us-central1
 

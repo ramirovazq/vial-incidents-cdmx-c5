@@ -302,6 +302,9 @@ Now with Kestra we will create necessary infraestructure:
 ### 7.2 Necessary to add next 2 flows in Kestra
 
 - 01_gcp_kv: this ones are necessary to connect with BigQuery
+
+Next is not obligatory. Instead use terraform to create bucket and dataset in BigQuery.
+
 - 02_gcp_create_bucket_and_dataset : will create bucket and dataset in BigQuery
 
 In a new terminal run next command to add flow **01_gcp_kv** to your kestra running in local
@@ -339,6 +342,11 @@ Will be necesary to substitute content of field with content of json file
 <p align="center">
   <img src="images\replace_content.png">
 </p>
+
+<p align="center">
+  This step can be skipped if you use terraform apply insisde infraestructure directory, because terraform has already created the necessary bucket and the GCP datase in bigQuery.
+</p>
+
 
 
 ```

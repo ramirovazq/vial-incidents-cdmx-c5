@@ -12,7 +12,7 @@ inputs:
 
 variables:
   file: "inViales_{{inputs.year_range}}.csv"
-  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/{{vars.file}}"
+  gcs_file: "gs://{{kv('GCP_BUCKET_NAME')}}/raw/{{vars.file}}"
   table: "{{kv('GCP_DATASET')}}.external_vial_incidents_{{inputs.year_range}}_brz"
   data: "{{outputs.extract.outputFiles['inViales_' ~ inputs.year_range ~ '.csv']}}"
 
@@ -77,5 +77,5 @@ pluginDefaults:
     values:
       serviceAccount: "{{kv('GCP_CREDS')}}"
       projectId: "{{kv('GCP_PROJECT_ID')}}"
-      location: "{{kv('GCP_LOCATION')}}"
+      location: "{{kv('GCP_REGION')}}"
       bucket: "{{kv('GCP_BUCKET_NAME')}}"
