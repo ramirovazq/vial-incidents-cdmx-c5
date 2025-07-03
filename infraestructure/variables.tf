@@ -3,20 +3,9 @@ variable "project" {
   default     = "vialincidentsc5-459704" # project id
 }
 
-
-variable "location" {
-  description = "Project location"
-  default     = "US"
-}
-
 variable "region" {
   description = "Region"
   default     = "us-central1"
-}
-
-variable "bq_dataset_name" {
-  description = "My BigQuery Dataset Name"
-  default     = "vial_incidents_13042025"
 }
 
 variable "gcs_bucket_name" {
@@ -24,7 +13,12 @@ variable "gcs_bucket_name" {
   default     = "vial_incidents_13042025"
 }
 
-variable "gcs_storage_class" {
-  description = "Bucket Storage Class"
-  default     = "STANDAR"
+variable "location" {
+  description = "Project location"
+  default     = "US"
+}
+
+variable "bq_dataset_name" {
+  description = "My BigQuery Dataset Name"
+  default     = "vial_incidents_13042025"
 }

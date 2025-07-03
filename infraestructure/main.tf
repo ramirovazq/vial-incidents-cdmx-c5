@@ -15,7 +15,7 @@ provider "google" {
 
 resource "google_storage_bucket" "project_bucket" {
   name          = var.gcs_bucket_name
-  location      = var.location
+  location      = var.region
   force_destroy = true
 
   lifecycle_rule {
@@ -36,7 +36,7 @@ resource "google_storage_bucket_object" "raw" {
 
 resource "google_bigquery_dataset" "project_dataset" {
   dataset_id = var.bq_dataset_name
-  location   = var.location
+  location   = var.region
 }
 
 # This code is compatible with Terraform 4.25.0 and versions that are backwards compatible to 4.25.0.
