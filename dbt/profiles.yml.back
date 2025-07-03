@@ -1,13 +1,13 @@
 bq-dbt-workshop:
   outputs:
     dev:
-      dataset: vial_incidents
+      dataset: vial_incidents_13042025
       fixed_retries: 1
       keyfile: /secrets/google_credentials.json
       location: us-central1
       method: service-account
       priority: interactive
-      project: utility-cathode-448702-g7
+      project: vialincidentsc5-459704
       threads: 4
       timeout_seconds: 300
       type: bigquery
