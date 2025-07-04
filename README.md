@@ -21,8 +21,6 @@ This repository aims to show a dashboard of vial incidents in CDMX
   - [6.6 Change to infraestructure directory](#66-move-to-infraestructure-directory)
   - [6.7 Terraform commands](#67-finally-apply-terraform-commands-directory)
   - [6.8 Terraform command for destroy](#68-if-you-want-to-destroy-it)
-
-
 - 7.[ Run the project](#7-run-the-project)
   - [7.1 Necessary to run Kestra (orchestrator) with docker](#71-necessary-to-run-kestra-orchestrator-with-docker)
   - [7.2 Necessary to add next 2 flows in Kestra](#72-necessary-to-add-next-2-flows-in-kestra)
@@ -43,8 +41,6 @@ This repository aims to show a dashboard of vial incidents in CDMX
   - [8.3.7. Open GCP Console](#837-open-gcp-console)
   - [8.3.8. Create service account](#838-create-serive-account)
 
-
-
 ---
 Preferable tu use docker with dbt section 7.4 instead of use dbt in the cloud. But if necessary, instructions on generate DBT account and setting
 
@@ -55,7 +51,6 @@ Preferable tu use docker with dbt section 7.4 instead of use dbt in the cloud. B
   - [9.4. Complete your account setup](#94-complete-your-account-setup)
   - [9.5. Connect a data warehouse](#95-connect-a-data-warehouse)
   - [9.6. Connect a Git repository](#96-connect-a-git-repository)
-
 
 ---
 
