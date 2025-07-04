@@ -6,6 +6,7 @@ This repository aims to show a dashboard of vial incidents in CDMX
 ---
 ## Index
 
+- 0.[Initial commands](#0-initial-commands)
 - 1.[Description of the problem](#1-description-of-the-problem)
 - 2.[Objective](#2-objective)
 - 3.[Technologies](#3-technologies)
@@ -47,15 +48,43 @@ Preferable tu use docker with dbt section 7.4 to reproduce in a quick way
 
 ---
 
-## 0.0 Generate a project in GCP Console
-## 0.1 Generate a user service in GCP (bigquery admin, storage admin, storage object admin). Donwload json file
-## 0.2 Export json file $ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
-## 0.3 Create conda environment $ conda create -n improvec5env python=3.9
-## 0.3.1 Move to infraestructure directory $ ~/CODE_LOCAL/improve_c5/vial-incidents-cdmx-c5/infraestructure
-## 0.4 $ terraform init
-## 0.4 $ terraform plan
-## 0.5 $ terraform apply
-## 0.6 $ terraform destroy
+
+## 0. Initial commands 
+
+These initial steps are part of generating the bucket in GCP and the dataset in BigQuery. So for do this, first is necessary to have a project in GCP, then obtain a json file that we are going to use as authentication for services in GCP, and finally use of terraform for creating neccessary infrastructure.
+
+
+1. Generate a project in GCP Console (this could be done via de GCP Console webpage)
+2. Generate a service user in GCP (bigquery admin, storage admin, storage object admin). 
+3. Donwload json file for this service user
+4. Export json file 
+
+```bash
+$ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
+```
+
+5. Create conda environment 
+```bash
+$ conda create -n improvec5env python=3.9
+```
+
+6. Move to infraestructure directory 
+```bash
+$ cd infraestructure
+```
+
+7. Finally apply terraform commands directory 
+```bash
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
+8. Of course if you want to destroy it
+```bash
+$ terraform destroy
+```
+
 
 ## 1. Description of the problem
 
