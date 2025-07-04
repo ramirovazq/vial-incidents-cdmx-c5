@@ -13,15 +13,6 @@ This repository aims to show a dashboard of vial incidents in CDMX
 - 4.[Data Architecture](#4-data-architecture)
 - 5.[Data description](#5-data-description)
 - 6.[Instructions on how to replicate the project](#6-instructions-on-how-to-replicate-the-project)
-- 6.1. [Setting up Google Cloud Platform account](#61-setting-up-google-cloud-platform-account)
-  - [6.1.1. Visit the Google Cloud official website](#611-visit-the-google-cloud-official-website)
-  - [6.1.2. Click on "Get started for free"](#612-click-on-get-started-for-free)
-  - [6.1.3. Sign in with your Google account](#613-sign-in-with-your-google-account)
-  - [6.1.4. Fill in your personal and billing information](#614-fill-in-your-personal-and-billing-information)
-  - [6.1.5. Accept the terms and conditions](#615-accept-the-terms-and-conditions)
-  - [6.1.6. Done! Your GCP account is now ready](#616-done-your-gcp-account-is-now-ready-)
-  - [6.1.7. Open GCP Console](#617-open-gcp-console)
-  - [6.1.8. Create service account](#618-create-serive-account)
 - 7.[7. Run the project](#7-run-the-project)
   - [7.1 Necessary to run Kestra (orchestrator) with docker](#71-necessary-to-run-kestra-orchestrator-with-docker)
   - [7.2 Necessary to add next 2 flows in Kestra](#72-necessary-to-add-next-2-flows-in-kestra)
@@ -32,6 +23,16 @@ This repository aims to show a dashboard of vial incidents in CDMX
 - 8.[References](#8-references)
   - [8.1 Reference 1](#81-reference-1)
   - [8.1 Reference 2](#82-reference-2)
+  - [8.3 Setting up Google Cloud Platform account](#61-setting-up-google-cloud-platform-account)
+  - [8.3.1. Visit the Google Cloud official website](#611-visit-the-google-cloud-official-website)
+  - [8.3.2. Click on "Get started for free"](#612-click-on-get-started-for-free)
+  - [8.3.3. Sign in with your Google account](#613-sign-in-with-your-google-account)
+  - [8.3.4. Fill in your personal and billing information](#614-fill-in-your-personal-and-billing-information)
+  - [8.3.5. Accept the terms and conditions](#615-accept-the-terms-and-conditions)
+  - [8.3.6. Done! Your GCP account is now ready](#616-done-your-gcp-account-is-now-ready-)
+  - [8.3.7. Open GCP Console](#617-open-gcp-console)
+  - [8.3.8. Create service account](#618-create-serive-account)
+
 
 
 ---
@@ -47,44 +48,6 @@ Preferable tu use docker with dbt section 7.4 to reproduce in a quick way
 
 
 ---
-
-
-## 0. Initial commands 
-
-These initial steps are part of generating the bucket in GCP and the dataset in BigQuery. So for do this, first is necessary to have a project in GCP, then obtain a json file that we are going to use as authentication for services in GCP, and finally use of terraform for creating neccessary infrastructure.
-
-
-1. Generate a project in GCP Console, this could be done via de GCP Console follow next instructions [https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#61-setting-up-google-cloud-platform-account](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#61-setting-up-google-cloud-platform-account) 
-
-2. Generate a service user in GCP (bigquery admin, storage admin, storage object admin). 
-3. Donwload json file for this service user
-4. Export json file 
-
-```bash
-$ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
-```
-
-5. Create conda environment 
-```bash
-$ conda create -n improvec5env python=3.9
-```
-
-6. Move to infraestructure directory 
-```bash
-$ cd infraestructure
-```
-
-7. Finally apply terraform commands directory 
-```bash
-$ terraform init
-$ terraform plan
-$ terraform apply
-```
-
-8. Of course if you want to destroy it
-```bash
-$ terraform destroy
-```
 
 
 ## 1. Description of the problem
@@ -181,104 +144,43 @@ This project aims to be as reproducible as possible, while remaining as agnostic
 Additionally, you’ll need a Google Cloud Platform (GCP) account and a DBT Cloud account (although an alternative using DBT with Docker will also be provided).
 This first section focuses on how to set up both GCP and DBT cloud account.
 
-## 6.1 Setting up Google Cloud Platform account
 
-Follow these steps to create your GCP account and access cloud services with free credits.
-Objective of these steps:
-- Create a GCP account
-- Generate a service account, and a json key file.
+## 6.0 Initial commands 
 
-### 6.1.1 Visit the Google Cloud official website
-Go to: [https://cloud.google.com/](https://cloud.google.com/)
-
-### 6.1.2 Click on "Get started for free"
-This will redirect you to a sign-up form where you can claim free credits (typically **$300 USD for 90 days**).
-
-<p align="center">
-  <img src="images\free_credits.png">
-</p>
+These initial steps are part of generating the bucket in GCP and the dataset in BigQuery. So for do this, first is necessary to have a project in GCP, then obtain a json file that we are going to use as authentication for services in GCP, and finally use of terraform for creating neccessary infrastructure.
 
 
-### 6.1.3 Sign in with your Google account
-- If you already have a Gmail account, use it to sign in.
-- If not, you can create one here: [https://accounts.google.com/signup](https://accounts.google.com/signup)
+1. Generate a project in GCP Console, this could be done via de GCP Console follow next instructions [here](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
 
-### 6.1.4 Fill in your personal and billing information
-Google will ask for:
-- Full name
-- Country
-- A valid credit or debit card (⚠️ **you won’t be charged** unless you manually upgrade after using the free credits)
+2. Generate a service user in GCP (bigquery admin, storage admin, storage object admin). 
+3. Donwload json file for this service user
+4. Export json file 
 
-This step is just to verify your identity and prevent abuse of the free tier.
+```bash
+$ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
+```
 
-### 6.1.5 Accept the terms and conditions
-Review and accept the usage terms, then click **"Start my free trial"**.
+5. Create conda environment 
+```bash
+$ conda create -n improvec5env python=3.9
+```
 
-### 6.1.6 Done! Your GCP account is now ready 🎉
-You can now access the GCP Console here:  
-[https://console.cloud.google.com/](https://console.cloud.google.com/)
+6. Move to infraestructure directory 
+```bash
+$ cd infraestructure
+```
 
-### 6.1.7 Open GCP console
+7. Finally apply terraform commands directory 
+```bash
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
 
-Open console in GCP [https://console.cloud.google.com/](https://console.cloud.google.com/) and create a new project: "vialincidentsc5"
-
-<p align="center">
-  <img src="images\create_project_vialincidentsc5.png">
-</p>
-
-### 6.1.8 Create serive account
-
-Select GCP IAM > create service account
-
-<p align="center">
-  <img src="images\iam_service_account.png">
-</p>
-
-<p align="center">
-  <img src="images\create_service_account.png">
-</p>
-
-Add details for this new service account
-<p align="center">
-  <img src="images\data_service_acccount.png">
-</p>
-
-Add cloud storage > Storage admin role
-<p align="center">
-  <img src="images\cloud_storage_admin.png">
-</p>
-
-Add Big Query > Big Query admin role
-<p align="center">
-  <img src="images\big_query_admin.png">
-</p>
-
-<p align="center">
-  <img src="images\done_servie_account.png">
-</p>
-
-Click in recently created service account
-<p align="center">
-  <img src="images\select_recently_created_service_account.png">
-</p>
-<p align="center">
-  <img src="images\search_for_keys_tab_in_new_service_account.png">
-</p>
-
-Click in add new key
-<p align="center">
-  <img src="images\add_new_key.png">
-</p>
-
-Add new key as json
-<p align="center">
-  <img src="images\add_new_key_json.png">
-</p>
-
-Add new key as json
-<p align="center">
-  <img src="images\download_recently_created_key_json.png">
-</p>
+8. Of course if you want to destroy it
+```bash
+$ terraform destroy
+```
 
 
 ## 7. Run the project 
@@ -422,7 +324,7 @@ bq-dbt-workshop:
       location: us-central1
       method: service-account
       priority: interactive
-      project: vialincidentsc5
+      project: vialincidentsc5-459704
       threads: 4
       timeout_seconds: 300
       type: bigquery
@@ -596,6 +498,107 @@ $ terraform init
 $ terraform plan
 $ terraform apply
 ```
+
+
+## 8.3 Setting up Google Cloud Platform account
+
+Follow these steps to create your GCP account and access cloud services with free credits.
+Objective of these steps:
+- Create a GCP account
+- Generate a service account, and a json key file.
+
+### 8.3.1 Visit the Google Cloud official website
+Go to: [https://cloud.google.com/](https://cloud.google.com/)
+
+### 8.3.2 Click on "Get started for free"
+This will redirect you to a sign-up form where you can claim free credits (typically **$300 USD for 90 days**).
+
+<p align="center">
+  <img src="images\free_credits.png">
+</p>
+
+
+### 8.3.3 Sign in with your Google account
+- If you already have a Gmail account, use it to sign in.
+- If not, you can create one here: [https://accounts.google.com/signup](https://accounts.google.com/signup)
+
+### 8.3.4 Fill in your personal and billing information
+Google will ask for:
+- Full name
+- Country
+- A valid credit or debit card (⚠️ **you won’t be charged** unless you manually upgrade after using the free credits)
+
+This step is just to verify your identity and prevent abuse of the free tier.
+
+### 8.3.5 Accept the terms and conditions
+Review and accept the usage terms, then click **"Start my free trial"**.
+
+### 8.3.6 Done! Your GCP account is now ready 🎉
+You can now access the GCP Console here:  
+[https://console.cloud.google.com/](https://console.cloud.google.com/)
+
+### 8.3.7 Open GCP console
+
+Open console in GCP [https://console.cloud.google.com/](https://console.cloud.google.com/) and create a new project: "vialincidentsc5"
+
+<p align="center">
+  <img src="images\create_project_vialincidentsc5.png">
+</p>
+
+### 8.3.8 Create serive account
+
+Select GCP IAM > create service account
+
+<p align="center">
+  <img src="images\iam_service_account.png">
+</p>
+
+<p align="center">
+  <img src="images\create_service_account.png">
+</p>
+
+Add details for this new service account
+<p align="center">
+  <img src="images\data_service_acccount.png">
+</p>
+
+Add cloud storage > Storage admin role
+<p align="center">
+  <img src="images\cloud_storage_admin.png">
+</p>
+
+Add Big Query > Big Query admin role
+<p align="center">
+  <img src="images\big_query_admin.png">
+</p>
+
+<p align="center">
+  <img src="images\done_servie_account.png">
+</p>
+
+Click in recently created service account
+<p align="center">
+  <img src="images\select_recently_created_service_account.png">
+</p>
+<p align="center">
+  <img src="images\search_for_keys_tab_in_new_service_account.png">
+</p>
+
+Click in add new key
+<p align="center">
+  <img src="images\add_new_key.png">
+</p>
+
+Add new key as json
+<p align="center">
+  <img src="images\add_new_key_json.png">
+</p>
+
+Add new key as json
+<p align="center">
+  <img src="images\download_recently_created_key_json.png">
+</p>
+
 
 ## This section for DBT I don't encorage you tu use this projec
 Reason is that when testing if don't save the key in github repository, was difficult to connect to dbt cloud. But feel free to consider it if you can bypass this step of sharing key generated by dbt, in github repository.
