@@ -54,7 +54,8 @@ Preferable tu use docker with dbt section 7.4 to reproduce in a quick way
 These initial steps are part of generating the bucket in GCP and the dataset in BigQuery. So for do this, first is necessary to have a project in GCP, then obtain a json file that we are going to use as authentication for services in GCP, and finally use of terraform for creating neccessary infrastructure.
 
 
-1. Generate a project in GCP Console (this could be done via de GCP Console webpage)
+1. Generate a project in GCP Console, this could be done via de GCP Console follow next instructions [https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#61-setting-up-google-cloud-platform-account](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#61-setting-up-google-cloud-platform-account) 
+
 2. Generate a service user in GCP (bigquery admin, storage admin, storage object admin). 
 3. Donwload json file for this service user
 4. Export json file 
