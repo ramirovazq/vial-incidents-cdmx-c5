@@ -6,20 +6,31 @@ This repository aims to show a dashboard of vial incidents in CDMX
 ---
 ## Index
 
-- 1.[Description of the problem](#1-description-of-the-problem)
-- 2.[Objective](#2-objective)
-- 3.[Technologies](#3-technologies)
-- 4.[Data Architecture](#4-data-architecture)
-- 5.[Data description](#5-data-description)
-- 6.[Instructions on how to replicate the project](#6-instructions-on-how-to-replicate-the-project)
-- 7.[7. Run the project](#7-run-the-project)
+- 1.[ Description of the problem](#1-description-of-the-problem)
+- 2.[ Objective](#2-objective)
+- 3.[ Technologies](#3-technologies)
+- 4.[ Data Architecture](#4-data-architecture)
+- 5.[ Data description](#5-data-description)
+- 6.[ Instructions on how to replicate the project](#6-instructions-on-how-to-replicate-the-project)
+  - [6.0 Initial commands](#60-initial-commands)
+  - [6.1 Generate a project in GCP Console](#61-generate-a-project-in-gcp-console)
+  - [6.2 Generate a user service in GCP](#62-generate-a-service-user-in-gcp)
+  - [6.3 Download json file](#63-donwload-json-file)
+  - [6.4 Export json file](#64-export-json-file)
+  - [6.5 Create conda environment](#65-create-conda-environment)
+  - [6.6 Change to infraestructure directory](#66-move-to-infraestructure-directory)
+  - [6.7 Terraform commands](#67-finally-apply-terraform-commands-directory)
+  - [6.8 Terraform command for destroy](#68-if-you-want-to-destroy-it)
+
+
+- 7.[ Run the project](#7-run-the-project)
   - [7.1 Necessary to run Kestra (orchestrator) with docker](#71-necessary-to-run-kestra-orchestrator-with-docker)
   - [7.2 Necessary to add next 2 flows in Kestra](#72-necessary-to-add-next-2-flows-in-kestra)
   - [7.3 Add flow for upload data to bucket](#73-add-flow-for-upload-data-to-bucket)
   - [7.4 Run DBT in docker and docker-compose](#74-run-dbt-in-docker-and-docker-compose)
   - [7.5 Validate tables generated in BigQuery](#75-validate-tables-generated-in-bigquery)
   - [7.6 Run Metabase as visualizator](#76-run-metabase-as-visualizator)
-- 8.[References](#8-references)
+- 8.[ References](#8-references)
   - [8.1 Reference 1](#81-reference-1)
   - [8.1 Reference 2](#82-reference-2)
   - [8.3 Setting up Google Cloud Platform account](#83-setting-up-google-cloud-platform-account)
@@ -35,15 +46,15 @@ This repository aims to show a dashboard of vial incidents in CDMX
 
 
 ---
-Preferable tu use docker with dbt section 7.4 to reproduce in a quick way
+Preferable tu use docker with dbt section 7.4 instead of use dbt in the cloud. But if necessary, instructions on generate DBT account and setting
 
-- 6.2. [Setting up DBT Cloud account](#62-setting-up-dbt-cloud-account)
-  - [6.2.1. Go to the DBT Cloud website](#621-go-to-the-dbt-cloud-website)
-  - [6.2.2. Go to the DBT Cloud website](#622--signup-in-dbt-cloud-website-and-verify-your-new-account)
-  - [6.2.3. Choose your signup method](#623-choose-your-signup-method)
-  - [6.2.4. Complete your account setup](#624-complete-your-account-setup)
-  - [6.2.5. Connect a data warehouse](#625-connect-a-data-warehouse)
-  - [6.2.6. Connect a Git repository](#626-connect-a-git-repository)
+- 9.[ Setting up DBT Cloud account](#92-setting-up-dbt-cloud-account)
+  - [9.1. Go to the DBT Cloud website](#91-go-to-the-dbt-cloud-website)
+  - [9.2. Go to the DBT Cloud website](#92--signup-in-dbt-cloud-website-and-verify-your-new-account)
+  - [9.3. Choose your signup method](#93-choose-your-signup-method)
+  - [9.4. Complete your account setup](#94-complete-your-account-setup)
+  - [9.5. Connect a data warehouse](#95-connect-a-data-warehouse)
+  - [9.6. Connect a Git repository](#96-connect-a-git-repository)
 
 
 ---
@@ -162,17 +173,19 @@ cd vial-incidents-cdmx-c5
 
 ### 6.1 Generate a project in GCP Console
 This could be done via de GCP Console follow next instructions 
-[check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+[check this section](#83-setting-up-google-cloud-platform-account) 
+
+8.3 Setting up Google Cloud Platform account
 
 ### 6.2 Generate a service user in GCP
 Generate a service user in GCP (bigquery admin, storage admin, storage object admin) 
-[check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+[check this section](#83-setting-up-google-cloud-platform-account) 
 
 ### 6.3 Donwload json file 
-Donwload json file for this service user [check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+Donwload json file for this service user [check this section](#83-setting-up-google-cloud-platform-account)
 
 ### 6.4 Export json file 
-[Check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+[Check this section](#83-setting-up-google-cloud-platform-account)
 
 ```bash
 $ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
@@ -611,16 +624,16 @@ Add new key as json
 ## This section for DBT I don't encorage you tu use this projec
 Reason is that when testing if don't save the key in github repository, was difficult to connect to dbt cloud. But feel free to consider it if you can bypass this step of sharing key generated by dbt, in github repository.
 
-## 6.2 Setting up DBT cloud account
+## 9. Setting up DBT cloud account
 
 Follow these steps to create your DBT cloud account. I wrote this thinking in that would be easy to reproduce in cloud, but I found that it's easier (I mean more reproducable) using dbt with docker in your local, so please refer to 7.4 Run DBT in docker and docker-compose
 
-### 6.2.1 Go to the DBT Cloud website
+### 9.1 Go to the DBT Cloud website
 Visit: [https://www.getdbt.com/](https://www.getdbt.com/)
 
 Follow the steps below to create a free DBT Cloud account and start building data transformation workflows.
 
-### 6.2.2  Signup in DBT Cloud website and verify your new account
+### 9.2  Signup in DBT Cloud website and verify your new account
 
 Or go directly to the signup page:  
 👉 [https://cloud.getdbt.com/signup/](https://cloud.getdbt.com/signup/)
@@ -631,19 +644,19 @@ At the end, you should verify new account:
   <img src="images\verify_db_new_account.png">
 </p>
 
-### 6.2.3 Choose your signup method
+### 9.3 Choose your signup method
 
 You can sign up using:
 - **Email and password**, or
 - A **GitHub** or **Google** account (recommended for easy integration)
 
-### 6.2.4 Complete your account setup
+### 9.4 Complete your account setup
 
 - Enter your name and company information (if asked)
 - Choose a **free plan** (Starter Plan)
 - Set your **workspace name**
 
-### 6.2.5 Connect a data warehouse
+### 9.5 Connect a data warehouse
 
 Choose default project name in DBT
 
@@ -682,7 +695,7 @@ Select Connection with BigQuery and put in dataset: vial_incidents
 
 You’ll need credentials or a service account from your cloud provider (e.g., GCP for BigQuery).
 
-### 6.2.6 Connect a Git repository
+### 9.6 Connect a Git repository
 
 DBT Cloud uses Git to version control your DBT project. In our case use "git clone" with this parameter ```git@github.com:ramirovazq/vial-incidents-cdmx-c5.git```
 
