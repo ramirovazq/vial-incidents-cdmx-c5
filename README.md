@@ -6,7 +6,6 @@ This repository aims to show a dashboard of vial incidents in CDMX
 ---
 ## Index
 
-- 0.[Initial commands](#0-initial-commands)
 - 1.[Description of the problem](#1-description-of-the-problem)
 - 2.[Objective](#2-objective)
 - 3.[Technologies](#3-technologies)
@@ -23,15 +22,15 @@ This repository aims to show a dashboard of vial incidents in CDMX
 - 8.[References](#8-references)
   - [8.1 Reference 1](#81-reference-1)
   - [8.1 Reference 2](#82-reference-2)
-  - [8.3 Setting up Google Cloud Platform account](#61-setting-up-google-cloud-platform-account)
-  - [8.3.1. Visit the Google Cloud official website](#611-visit-the-google-cloud-official-website)
-  - [8.3.2. Click on "Get started for free"](#612-click-on-get-started-for-free)
-  - [8.3.3. Sign in with your Google account](#613-sign-in-with-your-google-account)
-  - [8.3.4. Fill in your personal and billing information](#614-fill-in-your-personal-and-billing-information)
-  - [8.3.5. Accept the terms and conditions](#615-accept-the-terms-and-conditions)
-  - [8.3.6. Done! Your GCP account is now ready](#616-done-your-gcp-account-is-now-ready-)
-  - [8.3.7. Open GCP Console](#617-open-gcp-console)
-  - [8.3.8. Create service account](#618-create-serive-account)
+  - [8.3 Setting up Google Cloud Platform account](#83-setting-up-google-cloud-platform-account)
+  - [8.3.1. Visit the Google Cloud official website](#831-visit-the-google-cloud-official-website)
+  - [8.3.2. Click on "Get started for free"](#832-click-on-get-started-for-free)
+  - [8.3.3. Sign in with your Google account](#833-sign-in-with-your-google-account)
+  - [8.3.4. Fill in your personal and billing information](#834-fill-in-your-personal-and-billing-information)
+  - [8.3.5. Accept the terms and conditions](#835-accept-the-terms-and-conditions)
+  - [8.3.6. Done! Your GCP account is now ready](#836-done-your-gcp-account-is-now-ready-)
+  - [8.3.7. Open GCP Console](#837-open-gcp-console)
+  - [8.3.8. Create service account](#838-create-serive-account)
 
 
 
@@ -149,44 +148,6 @@ This first section focuses on how to set up both GCP and DBT cloud account.
 
 These initial steps are part of generating the bucket in GCP and the dataset in BigQuery. So for do this, first is necessary to have a project in GCP, then obtain a json file that we are going to use as authentication for services in GCP, and finally use of terraform for creating neccessary infrastructure.
 
-
-1. Generate a project in GCP Console, this could be done via de GCP Console follow next instructions [here](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
-
-2. Generate a service user in GCP (bigquery admin, storage admin, storage object admin). 
-3. Donwload json file for this service user
-4. Export json file 
-
-```bash
-$ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
-```
-
-5. Create conda environment 
-```bash
-$ conda create -n improvec5env python=3.9
-```
-
-6. Move to infraestructure directory 
-```bash
-$ cd infraestructure
-```
-
-7. Finally apply terraform commands directory 
-```bash
-$ terraform init
-$ terraform plan
-$ terraform apply
-```
-
-8. Of course if you want to destroy it
-```bash
-$ terraform destroy
-```
-
-
-## 7. Run the project 
-
-With these 2 steps configured (DBT cloud account and GCP account), next step will consist of run project. 
-
 So zero step is to clone the repository to your local machine, run the following command in your terminal:
 
 ```bash
@@ -197,6 +158,53 @@ Then, navigate into the project directory:
 ```
 cd vial-incidents-cdmx-c5
 ```
+
+
+### 6.1 Generate a project in GCP Console
+This could be done via de GCP Console follow next instructions 
+[check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+
+### 6.2 Generate a service user in GCP
+Generate a service user in GCP (bigquery admin, storage admin, storage object admin) 
+[check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+
+### 6.3 Donwload json file 
+Donwload json file for this service user [check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+
+### 6.4 Export json file 
+[Check this section](https://github.com/ramirovazq/vial-incidents-cdmx-c5?tab=readme-ov-file#8.3-setting-up-Google-Cloud-Platform-account) 
+
+```bash
+$ export GOOGLE_CREDENTIALS='~/CODE_LOCAL/improve_c5/vialincidentsc5-xxxxxxx.json'
+```
+
+### 6.5 Create conda environment 
+```bash
+$ conda create -n improvec5env python=3.9
+```
+
+### 6.6 Move to infraestructure directory 
+```bash
+$ cd infraestructure
+```
+
+### 6.7 Finally apply terraform commands directory 
+```bash
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
+### 6.8 If you want to destroy it
+```bash
+$ terraform destroy
+```
+
+
+## 7. Run the project 
+
+With these 2 steps configured (DBT cloud account and GCP account), next step will consist of run project. 
+
 
 
 ### 7.1 Necessary to run Kestra (orchestrator) with docker
