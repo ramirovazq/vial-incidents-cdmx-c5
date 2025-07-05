@@ -14,6 +14,11 @@ silver_all_years_first_clean as (
     WHERE id NOT IN (
         SELECT id FROM silver_ids_without_na
     )
+),
+silver_all_years_second_clean as (
+    SELECT *
+    FROM silver_all_years_first_clean
+    WHERE town_hall_catalog != 'Na'
+    
 )
-SELECT *
-FROM silver_all_years_first_clean
+SELECT * FROM silver_all_years_second_clean
