@@ -13,7 +13,6 @@ models:
           - unique:
               severity: warn
 
-
       - name: creation_date
         data_type: date
         description: "date of incident registered"
@@ -36,14 +35,12 @@ models:
           - not_null:
               severity: warn
 
-
       - name: index_week_day
         data_type: string
         description: "Index of week of day, take dim_weekday for reference"
         tests:
           - not_null:
               severity: warn
-
 
       - name: index_suburb
         data_type: int64

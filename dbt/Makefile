@@ -18,7 +18,7 @@ build:
 	docker compose run --rm $(SERVICE) build
 
 prod:
-	docker compose run --rm $(SERVICE) build --vars '{'is_test_run': 'false'}'
+	docker compose run --rm $(SERVICE) build --vars '{'is_test_run': 'false'}' --select $(MODEL)
 
 # Correr todos los modelos
 run:
@@ -30,7 +30,7 @@ run-model:
 
 # Testear el proyecto
 test:
-	docker compose run --rm $(SERVICE) test
+	docker compose run --rm $(SERVICE) test --select $(MODEL)
 
 # Ver docs (solo genera los archivos; necesitas servirlos tú mismo si quieres verlos)
 docs-generate:
