@@ -36,6 +36,9 @@ test:
 docs-generate:
 	docker compose run --rm $(SERVICE) docs generate
 
+docs-serve:
+	docker compose run --rm $(SERVICE) docs serve
+
 pull-metabase:
 	docker pull metabase/metabase:latest
 

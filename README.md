@@ -377,6 +377,36 @@ $ make prod
   <img src="images\output_final_dbt_deploy_production.png">
 </p>
 
+### 7.4.1 Get linage about tables
+
+Now it's recommended to visualize linage, so first it's necessary to generate documentation
+
+```
+$ make docs-generate
+```
+
+### 7.4.1 Get linage about tables
+
+Now let's run a local server that serves documentation recently generated. Because you have ran docs-generate, let's move to analytics_engineering, were we will find documentation (inside target directory)
+
+```
+$ cd ../analytics_engineering/target/
+```
+
+So would be great to see al documentation, let's run in python a local server
+
+```
+$ python3 -m http.server 8001
+```
+
+Now please visit in your browser: http://127.0.0.1:8001/ and you'll find an amazing documentation, like the next image.
+
+<p align="center">
+  <img src="images\linage.png">
+</p>
+
+
+
 ### 7.5 Validate tables generated in BigQuery 
 
 Now go to your GCP > BigQuery account and validate all tables generated as 'dim_' and 'fact_table'. As you can see ***fact_table*** is partitioned by year. In fact for the size of files wouldn't be necessary, but it was additioned for learning purposes.
