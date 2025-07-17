@@ -18,7 +18,11 @@ build:
 	docker compose run --rm $(SERVICE) build
 
 prod:
+	docker compose run --rm $(SERVICE) build --vars '{'is_test_run': 'false'}'
+
+prod-one-model:
 	docker compose run --rm $(SERVICE) build --vars '{'is_test_run': 'false'}' --select $(MODEL)
+
 
 # Correr todos los modelos
 run:
