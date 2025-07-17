@@ -26,6 +26,8 @@ This repository aims to show a dashboard of vial incidents in CDMX
   - [7.2 Necessary to add next 2 flows in Kestra](#72-necessary-to-add-next-2-flows-in-kestra)
   - [7.3 Add flow for upload data to bucket](#73-add-flow-for-upload-data-to-bucket)
   - [7.4 Run DBT in docker and docker-compose](#74-run-dbt-in-docker-and-docker-compose)
+  - [7.4.1 Generate documentation](#741-generate-documentation)
+  - [7.4.2 Browse over documentation](#742-browse-over-documentation)
   - [7.5 Validate tables generated in BigQuery](#75-validate-tables-generated-in-bigquery)
   - [7.6 Run Metabase as visualizator](#76-run-metabase-as-visualizator)
 - 8.[ References](#8-references)
@@ -377,7 +379,7 @@ $ make prod
   <img src="images\output_final_dbt_deploy_production.png">
 </p>
 
-### 7.4.1 Get linage about tables
+### 7.4.1 Generate documentation
 
 Now it's recommended to visualize linage, so first it's necessary to generate documentation
 
@@ -385,7 +387,7 @@ Now it's recommended to visualize linage, so first it's necessary to generate do
 $ make docs-generate
 ```
 
-### 7.4.1 Get linage about tables
+### 7.4.2 Browse over documentation
 
 Now let's run a local server that serves documentation recently generated. Because you have ran docs-generate, let's move to analytics_engineering, were we will find documentation (inside target directory)
 
