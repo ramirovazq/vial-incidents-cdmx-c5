@@ -1,0 +1,9 @@
+resource_group_name = "rg-dbx"
+workspace_name      = "dbx-ws"
+location            = "eastus"
+pricing_tier        = "premium"
+tags = {
+  owner = "equipo-datos"
+  env   = "dev"
+}
+subscription_id = "xxxx"

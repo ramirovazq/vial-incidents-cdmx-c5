@@ -752,3 +752,28 @@ It's possible to add free description and finally click in Save button
 <p align="center">
   <img src="images\dbt_parameters_update.png">
 </p>
+
+
+First step, install azure-cli in homebrew using:
+$ brew update && brew install azure-cli
+
+Then we need to do a login with:
+$ az login
+
+Then should appear a list of subscriptions in your account. If you have many subscriptions, then should appear all of them, and it's necessary to select the one you should be used.
+
+If you want to list your subscriptions then:
+
+$ az account list -o table
+
+Then apply:
+
+$ az account set --subscription "<TU-SUBSCRIPCION-ID-O-NOMBRE>"
+
+In providers.tf file it should be reflected exactly the same "<TU-SUBSCRIPCION-ID-O-NOMBRE>" in subscription_id = "<TU-SUBSCRIPCION-ID-O-NOMBRE>"
+
+Then apply
+
+$ terraform init
+$ terraform plan -out plan.out
+$ terraform apply plan.out

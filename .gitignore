@@ -3,6 +3,8 @@ infraestructure/keys/*.json
 # Local .terraform directories
 **/.terraform/*
 infraestructure/.terraform/*
+infraestructure/dbricks/terraform.tfvars
+infraestructure/dbricks/plan.out
 
 
 # Byte-compiled / optimized / DLL files
