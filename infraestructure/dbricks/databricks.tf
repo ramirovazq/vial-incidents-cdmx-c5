@@ -10,10 +10,10 @@ provider "databricks" {
 # Ejemplo: crear un cluster de prueba
 resource "databricks_cluster" "dev" {
   cluster_name            = "dev-cluster"
-  spark_version           = "13.3.x-scala2.12" # ajusta a una versión disponible en tu región
-  node_type_id            = "Standard_DS3_v2"  # ajusta a tu preferido/permitido
+  spark_version           = "16.4.x-scala2.12" # ajusta a una versión disponible en tu región
+  node_type_id            = "Standard_D4s_v3"  # ajusta a tu preferido/permitido
   autotermination_minutes = 10
-  num_workers             = 2
+  num_workers             = 1
 
   # (Opcional) si usas UC y/o políticas de clusters, podemos referenciarlas aquí.
 }
