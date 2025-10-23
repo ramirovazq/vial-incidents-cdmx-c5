@@ -72,9 +72,11 @@ def user_processing():
             filename="/tmp/user_info.csv"
         )
 
-    fake_user = is_api_available()
-    user_info = extract_user(fake_user)
-    process_user(user_info)
-    store_user()
+    #create_table >> process_user(extract_user(is_api_available())) >>  store_user()
+    process_user(extract_user(create_table >> is_api_available())) >>  store_user()
+    # fake_user = is_api_available()
+    # user_info = extract_user(fake_user)
+    # process_user(user_info)
+
 
 user_processing()
