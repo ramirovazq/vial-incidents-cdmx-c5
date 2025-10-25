@@ -52,12 +52,12 @@ def user_processing():
         from datetime import datetime
         file_name = "/tmp/user_info.csv"
         
-        user_info = {
-            "id": "1234",
-            "firstname": "fulano",
-            "lastname": "perengano",
-            "email": "hola@hola.com",
-        }
+        # user_info = {
+        #     "id": "1234",
+        #     "firstname": "fulano",
+        #     "lastname": "perengano",
+        #     "email": "hola@hola.com",
+        # }
         user_info["created_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(file_name, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=user_info.keys()) 
