@@ -29,4 +29,9 @@ def user_location(user: Asset, context: Context) -> dict[str]:
     print('>>>>>>> start user_data<<<')
     print('user_data: '+ str(user_data))
     print('>>>>>>> end user_data<<<')
+
+    print('>>>>>>> start user_data name<<<')
+    print(str(user_data[0]['results'][0]['name']))
+    print('>>>>>>> end user_data name<<<')
+
     return user_data[0]['results'][0]['location']
