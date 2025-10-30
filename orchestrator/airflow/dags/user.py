@@ -8,16 +8,25 @@ from airflow.sdk import asset, Asset, Context
 def user(self) -> dict[str]:
     import requests
 
-    r = requests.get(self.uri)
-    return r.json()
+    response = requests.get(self.uri)
+    print('>>>>>>> start <<<')
+    print('response: '+ str(response.json()))
+    print('>>>>>>> end <<<')
+    return response.json()
 
 @asset(
     schedule=user
 )
 def user_location(user: Asset, context: Context) -> dict[str]:
+    print('>>>>>>> start user.name <<<')
+    print('user_name: '+ str(user.name) + '<<<')
+    print('>>>>>>> end user.name <<<')
     user_data = context['ti'].xcom_pull(
         dag_id=user.name,
         task_ids=user.name,
         include_prior_dates=True,
     )
-    return user_data['results'][0]['location']
+    print('>>>>>>> start user_data<<<')
+    print('user_data: '+ str(user_data))
+    print('>>>>>>> end user_data<<<')
+    return user_data[0]['results'][0]['location']
