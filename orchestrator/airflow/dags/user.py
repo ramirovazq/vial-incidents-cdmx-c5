@@ -28,25 +28,20 @@ def user(self) -> dict[str]:
     return RESPONSE_CONSTANT
 
 
-@asset(
-    schedule=user
+@asset.multi(
+    schedule=user,
+    outlets=[
+        Asset(name="user_location"),
+        Asset(name="user_login")
+    ]
 )
-def user_location(user: Asset, context: Context) -> dict[str]:
-    print("PINGPINGPING2")
-    print('>>>>>>> start user.name <<<')
-    print('user_name: '+ str(user.name) + '<<<')
-    print('>>>>>>> end user.name <<<')
+def user_info(user: Asset, context: Context) -> list[dict[str]]:
     user_data = context['ti'].xcom_pull(
         dag_id=user.name,
         task_ids=user.name,
         include_prior_dates=True,
     )
-    print('>>>>>>> start user_data<<<')
-    print('user_data: '+ str(user_data))
-    print('>>>>>>> end user_data<<<')
-
-    print('>>>>>>> start user_data name<<<')
-    print(str(user_data[0]['results'][0]['name']))
-    print('>>>>>>> end user_data name<<<')
-
-    return user_data[0]['results'][0]['location']
+    return [
+        user_data[0]['results'][0]['location'],
+        user_data[0]['results'][0]['login']
+    ]
